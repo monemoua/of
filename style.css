@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .login {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-image: linear-gradient(to top right, #e5f50a, rgb(243, 23, 243), red, green, blue);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgb(69, 61, 61);
+    animation: boxoflogin 2s linear infinite, border 2s linear infinite;
+  }
+  
+  input {
+    width: 95%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: transparent;
+    animation: H 1s linear infinite;
+    margin: 10px 0;
+  }
+  
+  input:hover {
+    background-color: rgb(14, 228, 25);
+    height: 50px;
+  }
+  
+  input:active {
+    background-color: rgb(219, 24, 24);
+  }
+  
+  button {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 1rem;
+    margin: 20px auto 0;
+    display: block;
+    background-color: rgb(77, 247, 10);
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 20px yellow);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(10, 247, 176);
+    filter: drop-shadow(-2px -2px 20px rgb(252, 240, 14));
+    box-shadow: -2px -2px 20px red;
+  }
+  
+  button:active {
+    background-color: red;
+    filter: drop-shadow(-2px -2px 20px rgb(9, 9, 248));
+  }
+  
+  .top_ {
+    background-image: linear-gradient(to left, #d7f41c, rgb(241, 10, 10), rgb(10, 240, 60));
+    width: 100%;
+    height: 250px;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border: 2px solid;
+    animation: boxtop 1s linear infinite;
+    filter: drop-shadow(2px 2px 15px yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h2 {
+    font-family: jokerman, cursive;
+    font-size: 2.5rem;
+    color: rgb(234, 13, 153);
+    animation: changecolor 2s linear infinite;
+  }
+  
+  h1 {
+    margin: 40px auto 0;
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    text-align: center;
+    padding: 15px;
+    background-image: linear-gradient(to bottom right, #3af53a, rgb(248, 32, 183), rgb(234, 255, 192));
+    color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgb(47, 46, 46);
+    animation: YY 5s linear infinite, border 2s linear infinite;
+  }
+  
+  .bottom {
+    background-image: linear-gradient(to right, #d7f41c, rgb(241, 65, 65), rgb(10, 240, 60));
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top-right-radius: 100vw;
+    border-top-left-radius: 100vw;
+    border: 3px solid;
+    animation: boxbottom 4s linear infinite;
+    filter: drop-shadow(2px 2px 15px yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  #BB img {
+    height: 80px;
+    margin: 5px;
+  }
+  
+  /* Animations */
+  @keyframes boxoflogin {
+    0% { box-shadow: 10px 10px 10px yellow; }
+    20% { box-shadow: 10px 10px 10px rebeccapurple; }
+    40% { box-shadow: 10px 10px 10px red; }
+    60% { box-shadow: 10px 10px 10px green; }
+    80% { box-shadow: 10px 10px 10px blue; }
+  }
+  
+  @keyframes boxtop {
+    0% { border-color: red; }
+    20% { border-color: rgb(99, 233, 22); }
+    40% { border-color: rgb(20, 115, 232); }
+    60% { border-color: rgb(228, 64, 228); }
+    80% { border-color: rgb(26, 143, 193); }
+    100% { border-color: rgb(244, 123, 10); }
+  }
+  
+  @keyframes boxbottom {
+    0% { border-color: red; }
+    20% { border-color: rgb(99, 233, 22); }
+    40% { border-color: rgb(20, 115, 232); }
+    60% { border-color: rgb(228, 64, 228); }
+    80% { border-color: rgb(26, 143, 193); }
+    100% { border-color: rgb(244, 123, 10); }
+  }
+  
+  @keyframes H {
+    20% { box-shadow: 1px 1px 1px 1px rgb(230, 230, 143); }
+    40% { box-shadow: 1px 1px 1px 1px rgb(131, 231, 131); }
+    50% { box-shadow: 1px 1px 1px 1px rgb(236, 126, 126); }
+    70% { box-shadow: 1px 1px 1px 1px rgb(180, 128, 233); }
+    80% { box-shadow: 1px 1px 1px 1px rgb(132, 132, 237); } 
+  }
+  
+  @keyframes changecolor {
+    10% { color: rgb(248, 35, 35); }
+    20% { color: rgb(35, 242, 35); }
+    40% { color: rgb(0, 255, 242); }
+    60% { color: rgb(191, 241, 13); }
+    80% { color: rgb(238, 10, 223); }
+    100% { color: whitesmoke; }
+  }
+  
+  @keyframes YY {
+    20% { color: blue; }
+    30% { color: black; }
+    60% { color: green; }
+    80% { color: red; }
+    100% { color: yellow; }
+  }
+  
+  @keyframes border {
+    20% { filter: drop-shadow(-2px -2px 20px rgb(21, 255, 0)); }
+    40% { filter: drop-shadow(-2px -2px 20px rgb(0, 255, 255)); }
+    60% { filter: drop-shadow(-2px -2px 20px rgb(221, 255, 0)); }
+    80% { filter: drop-shadow(-2px -2px 20px rgb(255, 0, 217)); }
+    100% { filter: drop-shadow(-2px -2px 20px rgb(242, 23, 23)); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .top_ {
+      height: 180px;
+    }
+  
+    h1 {
+      font-size: 1.2rem;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    #BB img {
+      height: 60px; 
+    }
+  }
+  

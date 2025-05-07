@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css"> 
+
+
+    <style>
+         a {
+            text-decoration: none;
+            display: block;
+            width: 100px;
+            height: 30px;
+            color: black;
+            font-family: Phetsarath OT;
+        } 
+        button {
+            margin-top: 20px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 15px;
+            color: black;
+            background-image: linear-gradient(to right, red,yellow,green,rgb(247, 19, 228));
+            background-size: 400% 400%;
+            box-shadow: 10px 10px 20px black;
+            animation: ll 2s linear infinite;
+        }
+        @keyframes ll  {
+            20%{background-position: 100% 0%;}
+            40%{background-position: 50% 0%;}
+            60%{background-position: 10% 50%;}
+            80%{background-position: 10% 50%;}
+            100%{background-position: 100% 50%;}
+        }
+        button:hover {
+            margin-top: 20px;
+            margin-left: 20px;
+            border: none; 
+            border-radius: 15px;
+            color: black; 
+            background-image: linear-gradient(to right, red,red,red,white);
+            background-size: 400% 400%;
+            box-shadow: 10px 10px 20px black;
+            animation: ll 2s linear infinite;
+            filter: drop-shadow(2px 2px 20px rgb(241, 245, 6)); 
+        }
+        @keyframes ll  {
+            20%{background-position: 100% 0%;}
+            40%{background-position: 50% 0%;}
+            60%{background-position: 10% 50%;}
+            80%{background-position: 10% 50%;}
+            100%{background-position: 100% 50%;}
+        }
+
+        button:active{
+          animation: popo 2s linear infinite;
+        }
+        @keyframes popo {
+          from {
+            transform: rotate(30deg);
+          }
+        }
+
+        body {
+            background-image: linear-gradient(to right,rgb(252, 14, 14),rgb(248, 227, 248));
+            font-family: Phetsarath OT;
+        }
+        img { 
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px black;
+            filter: drop-shadow(2px 2px 20px red); 
+
+        }
+        img:hover {
+            filter: drop-shadow(2px 2px 20px rgb(249, 7, 7));
+            transition: transform 0.3s ease-in-out; 
+            animation:  zoomEffect 1s ease-in, canrun 2s linear infinite; 
+        }
+        @keyframes canrun {
+            20%{box-shadow: 10px 10px 20px rgb(123, 255, 0);}
+            40%{box-shadow: 10px 10px 20px rgb(0, 213, 255);} 
+            60%{box-shadow: 10px 10px 20px rgb(255, 0, 221);}
+            80%{box-shadow: 10px 10px 20px red;}
+            100%{box-shadow: 10px 10px 20px rgb(251, 255, 0);}
+        }
+        @keyframes zoomEffect {
+            from {
+              transform: scale(1.3);
+              opacity: 0;
+            }
+           
+          }
+
+          .bodytext{
+            margin-top: 50px; 
+            margin-bottom: 20px;
+            background-image: linear-gradient(to top,rgb(248, 142, 153),white);
+            display: block;
+            max-width: 1300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 10px 10px 30px rgb(113, 113, 113);
+            filter: drop-shadow(2px 2px 20px rgb(237, 254, 6)); 
+          } 
+          .bodytext:hover{
+            color: white;
+            animation:  zoomEffect 1s ease-in;
+            background-image: linear-gradient(to right,rgb(242, 19, 60)); 
+            transform: scale(1.05);
+
+          } 
+          @keyframes zoomEffect {
+            from {
+              transform: scale(1.2); 
+              opacity: 0;
+            }
+          
+          } 
+    </style>
+</head>
+<body>
+    <div>
+     <button  data-aos="fade-right"> <a href="moreinfoaboutpage.html"  data-aos="fade-up">ກັບຄືນ</a></button>  
+
+      </div>
+       
+         <div class="container">
+               <div class="row"> 
+                    <div class="col-xl-3 mt-5">  
+                      <img src="photos/u1.avif" alt="fruit" width="300" height="200"  data-aos="fade-up">    
+                       </div>
+                        <div class="col-xl-3  mt-5">
+                          <img src="photos/u2.jpeg" alt="fruit" height="200" width="300"  data-aos="fade-up">
+                            </div>
+                              <div class="col-xl-3 mt-5"> 
+                                <img src="photos/u3.webp" alt="fruit" width="300" height="200"  data-aos="fade-up">
+                                 </div>
+                                 <div class="col-xl-3 mt-5">
+                                  <img src="photos/u4.jpg" alt="fruit" width="300" height="200"  data-aos="fade-up">
+                                   </div>
+                </div>
+
+              <div class="row">
+                   <div class="col-xl-12 mt-5 bodytext"  data-aos="fade-up">
+                    <h1  data-aos="fade-left" style="text-align: center;">  ໝາກເງາະ  </h1>
+                        <p  data-aos="fade-left">ສ້ອມແປງຊິ່ນສ່ວນຕ່າງໆ ຂອງຮ່າງກາຍ — ມີວິຕາມິນ C ສູງ
+
+                          ຊ່ວຍເສີມພຸມຕ້ານທານ
+                          
+                          ປ້ອງກັນການຂາດໄຟເລັດ
+                          
+                          ຊ່ວຍຂັບຖ່າຍ — ມີໃຍອາຫານຊ່ວຍໃຫ້ລະບົບຍ່ອຍອາຫານເຮັດວຽກດີ
+                          
+                          ຊ່ວຍຂັບພິດ — ໃນເກືອບຜົນມີສານຕ້ານອະນຸມູນອິດສະລະ. <br> 
+                          ແຄລໍຣີ: ~68 kcal,
+
+                          ຄາບອຮອບ: ~16 ກຣາມ,
+                          
+                          ນໍ້າຕານ: ~13.2 ກຣາມ,
+                          
+                          ໃຍອາຫານ: ~0.9 ກຣາມ,
+                          
+                          ໂປຣຕີນ: ~0.9 ກຣາມ,
+                          
+                          ຟັດ: ~0.2 ກຣາມ,
+                          
+                          ວິຕາມິນ C: ~20.9 mg,
+                          
+                          ໂພແທສຊຽມ: ~42 mg,
+                          
+                          ໄຟເລັດ: ~0.35 mg. <br>
+                          <strong>ຂໍ້ເສຍ:</strong> ເປືອກ​ແລະ​ແກ່ນ​ບໍ່​ຄວນ​ກິນ ເພາະ​ມັນ​ອາດ​ມີ​ສານ​ພິດ.ຄົນທີ່ເປັນໂລກເບົາຫວານຄວນ ຈຳກັດການບໍລິໂພກຂອງພວກເຂົາເນື່ອງຈາກປະລິມານນໍ້າຕານ ສູງ.
+                        </p>
+                       </div>
+             </div>
+ 
+               <div class="row">  
+                     <div class="col-xl-4 mt-5">
+                        <img src="photos/u5.jpg" alt="fruit" width="300" height="200"  data-aos="fade-up">
+                         </div>
+                          <div class="col-xl-4  mt-5">
+                            <img src="photos/u6.webp" alt="fruit" height="200" width="300"  data-aos="fade-up">
+                             </div>
+                               <div class="col-xl-4 mt-5">
+                                 <img src="photos/u7.jpg" alt="fruit" width="300" height="200"  data-aos="fade-up">
+                                 </div>
+                </div>
+          </div>
+
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+      <script>
+      
+        AOS.init({    
+      
+      duration: 1000,
+           
+        });
+      
+      </script>
+      
+</body>
+</html>

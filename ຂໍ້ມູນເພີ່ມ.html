@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Phetsarath OT;
+            background-image: linear-gradient(to top, rgb(243, 10, 247),rgb(244, 220, 220),rgb(101, 142, 247),rgb(252, 145, 115));
+        }
+        .tt {
+            background-image: linear-gradient(to right,rgb(0, 255, 0),yellow);
+            display: block;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 200px;
+            padding: 20px;
+            border-radius: 10px; 
+            margin-bottom: 30px; 
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .ttt {
+            background-image: linear-gradient(to left,rgb(255, 0, 0),rgb(255, 0, 234));
+            display: block;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 200px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .yy {
+            background-image: linear-gradient(to bottom,rgb(0, 255, 213),rgb(226, 250, 16));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .y1 {
+            background-image: linear-gradient(to top,rgb(255, 0, 217),rgb(255, 255, 0));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .y2 {
+            background-image: linear-gradient(to top,rgb(244, 240, 239),rgb(0, 242, 255));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        } 
+        .y3 {
+            background-image: linear-gradient(to bottom,rgb(234, 255, 0),rgb(230, 202, 202));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .y4 {
+            background-image: linear-gradient(to top,rgb(215, 235, 213),rgb(234, 0, 255));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .y5 {
+            background-image: linear-gradient(to bottom,rgb(7, 243, 7),rgb(182, 248, 184));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+
+        .y6 {
+            background-image: linear-gradient(to bottom,rgb(249, 61, 61),rgb(241, 128, 128));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+
+        .y7 {
+            background-image: linear-gradient(to bottom,rgb(214, 247, 30),rgb(239, 237, 223));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        } 
+
+        .y8 {
+            background-image: linear-gradient(to bottom,rgb(30, 196, 247),rgb(239, 237, 223));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+
+        .y9 {
+            background-image: linear-gradient(to bottom,rgb(113, 244, 7),rgb(239, 237, 223));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red); 
+        }
+
+        .y10 {
+            background-image: linear-gradient(to bottom,rgb(218, 30, 247),rgb(239, 237, 223));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+
+        .y11 {
+            background-image: linear-gradient(to bottom,rgb(247, 66, 30),rgb(239, 237, 223));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        .y12 {
+            background-image: linear-gradient(to bottom,rgb(16, 244, 218),rgb(239, 237, 223));
+            margin-left: 10px;
+            width: 350px; 
+            height: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            filter: drop-shadow(2px 2px 20px red);
+        }
+        a {
+            text-decoration: none;
+
+        }
+        button  {
+            background-image: linear-gradient(to right,yellow,rgb(24, 237, 17));
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 10px;
+            box-shadow:  10px 10px 20px black;
+            filter: drop-shadow(2px 2px 20px yellow);
+        }
+       .gofor:hover {
+        filter: drop-shadow(2px 2px 20px yellow);
+        cursor: pointer;
+         transform: scale(1.2); 
+         animation: zoom 1s ease-in-out; 
+       }
+       @keyframes zoom {   
+        from{ 
+            transform: scale(1.2); 
+            opacity: 0;
+        }
+      }
+      button:hover{
+        filter: drop-shadow(2px 2px 20px red);
+        background-image: linear-gradient(to top,red,yellow);  
+      }
+      button:active {
+        animation: tot 2s linear infinite;
+      }
+      @keyframes tot {
+        from {
+            transform: rotate(30deg); 
+        }
+      }
+    </style>
+</head>
+<body> 
+
+     <div class="container-fluid mt-5">
+        <button><a href="dex1.html">ກັບຄືນ</a></button>
+           <div class="row">
+               <div class="col-lg-6 tt gofor"  data-aos="fade-up"> 
+                  <h2>ໝາກໄມ້ແມ່ນຫຍັງ</h2>
+                   <p>ໝາກໄມ້ແມ່ນສ່ວນໜຶ່ງຂອງພືດທີ່ເກີດຈາກດອກ ແລະ ປົກກະຕິແລ້ວມີແກ່ນ.
+                     ພວກມັນມັກຈະຫວານ, ສົ້ມ, ຫຼືບາງຄັ້ງກໍ່ມີລົດຊາດທີ່ເປັນກາງ, ແລະປະຊາຊົນມັກຈະກິນພວກມັນເປັນອາຫານ.      
+                       ຫມາກໄມ້ແມ່ນວິທີການກະຈາຍເມັດຂອງທໍາມະຊາດ - ເມື່ອສັດ (ລວມທັງມະນຸດ) ກິນຫມາກໄມ້, ເມັດສາມາດເດີນທາງແລະເຕີບໃຫຍ່ເປັນພືດໃຫມ່!</p>
+                       </div>
+                        <div class="col-lg-6 ttt gofor"  data-aos="fade-up"> 
+                          <h2> ຄວາມແຕກຕ່າງ ໝາກໄມ້ ແລະ ຜັກ</h2>
+                            <p>ໝາກໄມ້ແມ່ນມາຈາກພາກສ່ວນອອກດອກຂອງພືດ ແລະ ມີແກ່ນ. ໃນທາງກົງກັນຂ້າມ, ຜັກແມ່ນສ່ວນທີ່ກິນໄດ້ຂອງພືດເຊັ່ນ: ໃບ, ລໍາຕົ້ນ ຫຼື ທັງຕົ້ນ</p>
+                            </div>
+            </div>
+            <div class="row"   data-aos="fade-right">
+                <div class="col-sm-3 yy gofor" >
+                     <h2>ວິຕາມິນ A </h2>
+                       <p>ວິຕາມິນ A ເປັນວິຕາມິນທີ່ລະລາຍໄຂມັນທີ່ສຳຄັນສຳລັບ:
+
+                          ວິໄສທັດ (ໂດຍສະເພາະໃນແສງສະຫວ່າງຫນ້ອຍ).
+                    
+                             ສຸຂະພາບຂອງລະບົບພູມຕ້ານທານ.
+                    
+                               ຜິວສຸຂະພາບດີ.
+                    
+                                 ການຂະຫຍາຍຕົວແລະການພັດທະນາ..</p>
+                </div>
+
+            <div class="col-sm-3 y1 gofor"  data-aos="fade-up">
+                    <h2>ວິຕາມິນ B </h2>
+                        <p>ວິຕາມິນບີ:
+                             ກຸ່ມຂອງວິຕາມິນ (ເຊັ່ນ: B1, B2, B6, B12) ທີ່ຊ່ວຍໃຫ້ຮ່າງກາຍປ່ຽນອາຫານເປັນພະລັງງານ,
+                                 ແລະສະຫນັບສະຫນູນການເຮັດວຽກຂອງສະຫມອງແລະລະບົບປະສາດ.</p>
+
+                    </div>
+
+            <div class="col-sm-3 y2 gofor"  data-aos="fade-up">
+                 <h2>ວິຕາມິນ C </h2>
+                        <p>ວິຕາມິນ C (ອາຊິດ ascorbic) ແມ່ນວິຕາມິນທີ່ລະລາຍໃນນ້ໍາທີ່ສໍາຄັນທີ່ຊ່ວຍ:
+                             ເສີມສ້າງລະບົບພູມຕ້ານທານ.       
+                                ປິ່ນປົວບາດແຜໂດຍການສົ່ງເສີມການຜະລິດ collagen.  
+                                   ປົກປ້ອງເຊລເປັນສານຕ້ານອະນຸມູນອິດສະລະ.  
+                                     ປັບປຸງການດູດຊຶມທາດເຫຼັກ.
+                                       ສະຫນັບສະຫນູນຜິວຫນັງທີ່ມີສຸຂະພາບດີ.</p>
+
+            </div>
+
+            <div class="col-sm-3 y3 gofor"  data-aos="fade-up">
+                   <h2>ວິຕາມິນ D </h2>  
+                         <p>ວິຕາມິນ D:
+                               ຊ່ວຍໃຫ້ຮ່າງກາຍດູດຊຶມທາດການຊຽມ, ເຊິ່ງເປັນສິ່ງຈໍາເປັນສໍາລັບກະດູກທີ່ເຂັ້ມແຂງແລະຮັກສາສຸຂະພາບຂອງກະດູກ.
+                                   ມັນຍັງສະຫນັບສະຫນູນການເຮັດວຽກຂອງພູມຕ້ານທານ.</p>
+
+            </div>
+
+            <div class="row"  data-aos="fade-left">
+
+                <div class="col-sm-3 y4 gofor">
+                      <h2>ວິຕາມິນ E </h2>
+                            <p>ວິຕາມິນ E ເປັນວິຕາມິນທີ່ລະລາຍໄຂມັນ ແລະເປັນສານຕ້ານອະນຸມູນອິດສະລະທີ່ຊ່ວຍ:
+    
+                                  ປົກປ້ອງຈຸລັງຈາກຄວາມເສຍຫາຍ.
+                        
+                                      ສະຫນັບສະຫນູນການເຮັດວຽກຂອງພູມຕ້ານທານ.
+                        
+                                       ສົ່ງເສີມຜິວຫນັງທີ່ມີສຸຂະພາບດີແລະການປິ່ນປົວ.
+                        
+                                          ປົກປ້ອງສຸຂະພາບຕາ.</p>
+
+                </div>
+
+                <div class="col-sm-3 y5 gofor"  data-aos="zoom-in-right">
+                        <h2>ວິຕາມິນ K: </h2>
+                            <p>ວິຕາມິນ K:
+                                  ມີຄວາມຈໍາເປັນສໍາລັບການແຂງຕົວຂອງເລືອດ, ຊ່ວຍໃຫ້ເລືອດກ້າມຢ່າງຖືກຕ້ອງໃນເວລາທີ່ຈໍາເປັນ, ແລະສະຫນັບສະຫນູນສຸຂະພາບຂອງກະດູກໂດຍການຄວບຄຸມທາດການຊຽມ.</p>
+                </div>
+
+                <div class="col-sm-3 y6 gofor"  data-aos="zoom-in-right">
+                        <h2>Magnesium </h2>
+                               <p>ແມກນີຊຽມແມ່ນແຮ່ທາດທີ່ຊ່ວຍ:
+    
+                                    ສະຫນັບສະຫນູນການເຮັດວຽກຂອງກ້າມເນື້ອແລະເສັ້ນປະສາດ.
+                        
+                                          ຮັກສາສຸຂະພາບຂອງກະດູກ.
+                        
+                                            ຄວບຄຸມນໍ້າຕານໃນເລືອດ.
+                        
+                                               ຜະລິດພະລັງງານ.
+                        
+                                                  ສົ່ງເສີມການຜ່ອນຄາຍ ແລະນອນຫຼັບໄດ້ດີຂຶ້ນ.</p>
+                </div>
+
+                <div class="col-sm-3 y7 gofor"  data-aos="zoom-in-right">
+                           <h2>Zinc </h2>
+                               <p>ສັງກະສີແມ່ນແຮ່ທາດທີ່ສໍາຄັນທີ່ຊ່ວຍ:
+    
+                                    ເສີມສ້າງລະບົບພູມຕ້ານທານ.
+                        
+                                       ສົ່ງເສີມການປິ່ນປົວບາດແຜ.
+                        
+                                            ສະຫນັບສະຫນູນການຂະຫຍາຍຕົວແລະການພັດທະນາ.
+                        
+                                                 ຊ່ວຍສັງເຄາະທາດໂປຼຕີນ.
+                        
+                                                      ຮັກສາຜິວທີ່ມີສຸຂະພາບດີ.</p>
+
+                 </div>
+
+          </div>
+
+        <div class="row" data-aos="fade-right">
+            <div class="col-sm-3 y8 gofor">
+                  <h2>ແຮ່ທາດ </h2>
+                     <p>ແຮ່ທາດ
+                          ໂພແທດຊຽມ: ແຮ່ທາດທີ່ຊ່ວຍຄວບຄຸມຄວາມດັນເລືອດ, ສະຫນັບສະຫນູນການເຮັດວຽກຂອງກ້າມຊີ້ນ, 
+                             ແລະຮັກສາຄວາມສົມດຸນຂອງນ້ໍາ. ພົບເຫັນຢູ່ໃນຫມາກກ້ວຍແລະຫມາກກ້ຽງ.</p>
+
+            </div>
+
+            <div class="col-sm-3 y9 gofor" data-aos="zoom-in-left">
+                    <h2>phosphorus </h2>
+                          <p>ຟອສໂຟອຣັດ: ເປັນແຮ່ທາດທີ່ສະຫນັບສະຫນູນສຸຂະພາບຂອງກະດູກ, ການຜະລິດພະລັງງານ, ແລະການເຮັດວຽກຂອງເຊນ.
+                                ພົບໃນຫມາກໄມ້ເຊັ່ນຫມາກກ້ວຍແລະ apricots.</p>
+
+            </div>
+
+            <div class="col-sm-3 y10 gofor" data-aos="zoom-in-left">
+                   <h2>Fiber </h2>
+                       <p>
+                          ໄຟບເວີ: ເປັນສານອາຫານຈາກພືດທີ່ຊ່ວຍໃນການຍ່ອຍອາຫານ, ສະຫນັບສະຫນູນການເຄື່ອນໄຫວຂອງລໍາໄສ້ທີ່ມີສຸຂະພາບດີ, ແລະສາມາດຊ່ວຍຫຼຸດລະດັບ
+                             cholesterol. ພົບເຫັນຢູ່ໃນຫມາກເອັມເປີ້ນ, ຫມາກພິກ, ແລະຫມາກໄມ້ປ່າເມັດ.</p>
+
+            </div>
+
+            <div class="col-sm-3 y11 gofor" data-aos="zoom-in-left">
+                 <h2>ນໍ້າຕານ</h2>
+                    <p>
+                      ນ້ຳຕານທຳມະຊາດ
+                         ນໍ້າຕານທໍາມະຊາດ: ນໍ້າຕານທີ່ພົບເຫັນຢູ່ໃນຫມາກໄມ້, ຕົ້ນຕໍແມ່ນ fructose,
+                          ເຊິ່ງສະຫນອງແຫຼ່ງພະລັງງານຢ່າງໄວວາໂດຍບໍ່ມີການເພີ່ມແຄລໍລີ່ຫຼືການປຸງແຕ່ງ້ໍາຕານທີ່ຫລອມໂລຫະ.</p>
+            </div>
+
+        </div>
+
+        <div class="row" >
+            <div class="col-sm-3 y12 gofor"  data-aos="zoom-in-down">
+                <h2>   ນ້ຳ    </h2>
+                   <p>
+                      ນ້ຳ: ໝາກໄມ້ມັກຈະອຸດົມໄປດ້ວຍນ້ຳ ເຊິ່ງຊ່ວຍຮັກສາຄວາມຊຸ່ມຊື້ນ. ຕົວຢ່າງລວມມີໝາກໂມ, ໝາກກ້ຽງ, ແລະສະຕໍເບີຣີ.</p>
+            </div>
+
+            <div class="col-sm-3 y6 gofor"  data-aos="zoom-in-down">
+                 <h2 >  ແຄລໍຣີ  calorie   </h2>
+                   <p>
+                     ແຄລໍຣີ (calories) ແມ່ນຫນ່ວຍວັດພະລັງງານ ທີ່ໃຊ້ໃນການຄຳນວນພະລັງງານທີ່ເຮົາໄດ້ຈາກອາຫານ ແລະ ນ້ຳດື່ມ. ຮ່າງກາຍຂອງເຮົາໃຊ້ແຄລໍຣີເພື່ອເຮັດກິດຈະກຳຕ່າງໆ,
+                       ເຊັ່ນ ການຫາຍໃຈ, ເດີນ, ຄິດ, ຫຼື ກະທັ່ງຕອນນອນຫຼັບ.</p> 
+            </div>
+
+            <div class="col-sm-3 y2 gofor"  data-aos="zoom-in-down">
+                 <h2 > ທາດໂປຼຕີນ  Protein </h2>
+                   <p>
+                      ຄາໂບໄຮເດດເປັນແຫຼ່ງພະລັງງານຕົ້ນຕໍສໍາລັບຮ່າງກາຍ. ພວກມັນປະກອບດ້ວຍໂມເລກຸນນ້ໍາຕານແລະມີສອງປະເພດ: ແບບງ່າຍດາຍ (ພະລັງງານໄວ, ຄືກັບນໍ້າຕານ) ແລະສະລັບສັບຊ້ອນ (ພະລັງງານທີ່ຍາວກວ່າເຊັ່ນ: ເມັດພືດທັງຫມົດ).
+                         ຄາໂບໄຮເດຣດເປັນສິ່ງຈໍາເປັນສໍາລັບການເຜົາຜະຫລານຂອງສະຫມອງແລະກ້າມຊີ້ນ.</p> 
+            </div>
+
+        </div>
+
+     </div>
+
+     
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        AOS.init();
+      </script>
+</body>
+</html>

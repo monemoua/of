@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+     <style>
+        body {
+            background:linear-gradient(to right, rgb(135, 239, 121),rgb(56, 223, 238));
+            font-family: Phetsarath OT;
+            color: black;
+            font-weight: bold;
+            
+        }
+        a {
+            text-decoration: none;
+            color: rgb(37, 10, 245);
+            font-family: Phetsarath OT;
+            background-image: linear-gradient(to right,yellow,rgb(22, 241, 22));
+            display: block;
+            height: 60px;
+            width: 190px;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            padding-top: 10px;
+            border-radius: 15px;
+        }
+
+        a:hover{
+            text-decoration: none;
+            color: rgb(37, 10, 245);
+            font-family: Phetsarath OT;
+            background-image: linear-gradient(to right,rgb(243, 14, 227),rgb(247, 14, 49));
+            display: block;
+            height: 60px;
+            width: 190px;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            padding-top: 10px;
+            border-radius: 15px;
+        }
+        a:active{
+            background-image: linear-gradient(to top,yellow,white);
+            filter: drop-shadow(2px 2px 20px rgb(17, 0, 255));
+
+        }
+
+
+        img {
+            border: none;
+            border-radius: 20px;  
+            box-shadow: 10px 10px 20px rgb(42, 41, 40);
+            padding: 20px;
+        }
+        #car1{
+            background-image: linear-gradient(to top, rgb(254, 16, 36),rgb(241, 223, 19));
+            width: 300px;
+            height: 450px;
+            display: block;
+            justify-content: center;
+            justify-items: center;
+            border-radius: 20px;
+            margin-left: 70px;
+            box-shadow: 10px 10px 20px rgb(48, 47, 47);
+            filter: drop-shadow(2px  2px 20px rgb(0, 255, 0));
+            animation:  bb 2s linear infinite;
+        }
+        @keyframes bb {
+            20%{box-shadow: 10px 10px 20px red;}
+            40%{box-shadow: 10px 10px 20px rgb(34, 255, 0);}
+            60%{box-shadow: 10px 10px 20px rgb(17, 0, 255);}
+            80%{box-shadow: 10px 10px 20px rgb(233, 6, 218);}
+            100%{box-shadow: 10px 10px 20px rgb(177, 232, 10);}
+        }
+        #car2{
+            background-image: linear-gradient(to top, rgb(241, 7, 237),rgb(242, 255, 0));
+            width: 300px;
+            height: 450px;
+            display: block;
+            justify-content: center;
+            justify-items: center;
+            border-radius: 20px;
+            margin-left: 70px;
+            box-shadow: 10px 10px 20px rgb(48, 47, 47);
+            filter: drop-shadow(2px  2px 20px rgb(249, 6, 249));
+            animation:  bb 2s linear infinite;
+
+
+
+        }
+        @keyframes bb {
+            20%{box-shadow: 10px 10px 20px red;}
+            40%{box-shadow: 10px 10px 20px rgb(34, 255, 0);}
+            60%{box-shadow: 10px 10px 20px rgb(17, 0, 255);}
+            80%{box-shadow: 10px 10px 20px rgb(233, 6, 218);}
+            100%{box-shadow: 10px 10px 20px rgb(177, 232, 10);}
+        }
+        #car3{
+            background-image: linear-gradient(to top, rgb(241, 244, 244),rgb(242, 255, 0));
+            width: 300px;
+            height: 450px;
+            display: block;
+            justify-content: center;
+            justify-items: center;
+            border-radius: 20px;
+            margin-left: 70px;
+            box-shadow: 10px 10px 20px rgb(48, 47, 47);
+            filter: drop-shadow(2px  2px 20px rgb(216, 249, 6));
+            animation:  bb 2s linear infinite;
+              
+
+        }
+        @keyframes bb {
+            20%{box-shadow: 10px 10px 20px red;}
+            40%{box-shadow: 10px 10px 20px rgb(34, 255, 0);}
+            60%{box-shadow: 10px 10px 20px rgb(17, 0, 255);}
+            80%{box-shadow: 10px 10px 20px rgb(233, 6, 218);}
+            100%{box-shadow: 10px 10px 20px rgb(177, 232, 10);}
+        }
+        #car4{
+            background-image: linear-gradient(to top, rgb(38, 241, 7),rgb(255, 0, 4)); 
+            width: 300px;
+            height: 450px; 
+            display: block;
+            justify-content: center;
+            justify-items: center;
+            border-radius: 20px;
+            margin-left: 70px; 
+            box-shadow: 10px 10px 20px rgb(48, 47, 47);
+            filter: drop-shadow(2px  2px 20px rgb(26, 5, 247));
+            animation:  bb 2s linear infinite;
+
+
+        } 
+        @keyframes bb {
+            20%{box-shadow: 10px 10px 20px red;}
+            40%{box-shadow: 10px 10px 20px rgb(34, 255, 0);}
+            60%{box-shadow: 10px 10px 20px rgb(17, 0, 255);}
+            80%{box-shadow: 10px 10px 20px rgb(233, 6, 218);}
+            100%{box-shadow: 10px 10px 20px rgb(177, 232, 10);}
+        }
+        #top {
+            text-align: center;
+            margin-top: 50px;              
+        }
+        #goback{
+            margin-top: 50px;
+            margin-left: 30px;
+            padding-top: 20px;
+            background-image: linear-gradient(to right,rgb(241, 12, 226),rgb(250, 246, 8));
+            color: black;
+            box-shadow: 10px 10px 20px black;
+        }
+        #goback:hover {
+            background-image: linear-gradient(to right,rgb(11, 247, 11),rgb(245, 49, 49));
+            filter: drop-shadow(2px 2px 20px yellow);
+        }
+        #goback:active {
+            filter: drop-shadow(2px 2px 20px rgb(244, 5, 228));
+            animation: hooa 2s linear infinite;
+        }
+        @keyframes hooa {
+            from {
+                transform: rotate(30deg);
+            }
+        }
+     </style>
+</head>
+<body> 
+
+       <a href="dex1.html" id="goback"  data-aos="fade-right">< ກັບຄືນ</a> 
+       
+        <h1 id="top"><marquee behavior="alternate">ເຫຼົ່ານີ້ກໍຍັງເປັນໝາກໄມ້ບາງຊະນິດທີ່ມີປະໂຫຍດສູງເຊັ່ນດຽວກັນ </marquee></h1>  
+    <div class="container-fluid">    
+        <div class="row mt-5">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4" id="car1" data-aos="fade-left">
+                  <img src="photos/r11.png" alt="fuilt" width="300" height="200">    
+                  <h1> Rambutan</h1> 
+                   <p> ຂໍ້ດີ </p>  
+                   <p>ຂໍ້ເສຍ</p>  
+                   <p>ໝາຍເຫດ</p>  
+                   <h2> <a href="rambutan.html" data-aos="flip-left">ຂໍ້ມູນເພີ່ມເຕີມ</a></h2>           
+                </div>
+            <div class="col-12 col-sm-6 col-lg-3 mt-4" id="car2" data-aos="fade-up-right">
+                <img src="photos/m.png" alt="fruilt" width="300" height="200">    
+                <h1> mongosteen</h1> 
+                <p> ຂໍ້ດີ </p>  
+                <p>ຂໍ້ເສຍ</p>  
+                <p>ໝາຍເຫດ</p>   
+                 <h2> <a href="car2.html"  data-aos="flip-right">ຂໍ້ມູນເພີ່ມເຕີມ</a></h2>          
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 mt-4" id="car3"  data-aos="fade-up-left">
+                <img src="photos/q.png" alt="fruilt" width="300" height="200">    
+                <h1> longan</h1> 
+                <p> ຂໍ້ດີ </p>  
+                <p>ຂໍ້ເສຍ</p>  
+                <p>ໝາຍເຫດ</p> 
+                 <h2> <a href="car3.html">ຂໍ້ມູນເພີ່ມເຕີມ</a></h2>         
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 mt-4" id="car4"  data-aos="fade-down-right">  
+                <img src="photos/s.png" alt="fruit" width="300" height="200">     
+                <h1>​Rose Apple</h1> 
+                <p> ຂໍ້ດີ </p>  
+                <p>ຂໍ້ເສຍ</p>  
+                <p>ໝາຍເຫດ</p>
+                 <h2> <a href="car4.html">ຂໍ້ມູນເພີ່ມເຕີມ</a></h2>                  
+              </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script>
+     AOS.init({    
+     duration: 2000,
+     });
+   </script>
+</body>
+</html>

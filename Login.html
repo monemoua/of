@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>  
+  <link rel="stylesheet" href="style.css">   
+  <style>
+    @media (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
+    }@media (max-width: 480px) {
+      body {   
+        background-color: pink;  
+        font-size: 14px;    
+      }
+    }
+    /* ສຳລັບຈໍຂະໜາດກາງ */
+    @media (min-width: 481px) and (max-width: 768px) {
+      body { 
+        background-color: lightblue;
+        font-size: 16px;
+      }
+    }
+
+    /* ສຳລັບຈໍຂະໜາດໃຫຍ່ */
+    @media (min-width: 769px) {
+      body { 
+        background-color: lightgreen;
+        font-size: 20px;
+      }
+    } 
+    .video-background {
+      position: fixed;      /* ຕິດກັບຈໍ */
+      top: 0;
+      left: 0;
+      min-width: 100%;      /* ໃຫ້ໃຫຍ່ພໍເຕັມຈໍ */
+      min-height: 100%;
+      object-fit: cover;    /* ໃຫ້ຄວາມກວ້າງ-ສູງ ຄົບທັງໝົດ */
+      z-index: -1;          /* ສົ່ງໄປຢູ່ຂ້າງຫຼັງ */
+    }
+    
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+                                         /*ສະແດງໃຫ້ຢູ່ທາງໜ້າ ຂອງ background 1 show */
+    form, .top_, .login, .bottom {
+      position: relative;           
+       z-index: 1; 
+    }
+  </style>
+</head>
+<body>  
+
+  <video autoplay muted loop class="video-background"> 
+    <source src="video/vdo.mp4" type="video/mp4"> 
+  </video>
+
+  <form onsubmit="saveLogin(); return false;"> 
+    <div class="top_"> 
+      <h1>
+        <marquee behavior="alternate" onmouseover="this.stop()" onmouseout="this.start()">
+          Welcome to fruit's website 
+        </marquee>
+      </h1> 
+    </div>
+      
+    <div class="login">  
+      <h2>Login <span id="E">🦴</span></h2> 
+      <label for="email">E-mail<br>
+        <input type="text" name="email" placeholder="Enter your email" id="email" > 
+      </label> <br>
+      <label for="password">Password<br> 
+        <input type="password" name="password" placeholder="Enter your password" id="password"  minlength="6">
+      </label><br>
+      <a href="forgetpassword.html">Forgot password?</a> <br><br> 
+      <button type="submit">Login</button><br><br>   
+      <a href="Sign.html">Don't have an account? Sign up</a> 
+    </div>
+
+    <div class="bottom"> 
+      <marquee id="BB">    
+        <span id="fruit"><img src="photos/apple.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/banana.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/mango.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/papaya.webp" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/orange.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/dragon.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/jack.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/rian.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/pe.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/Avo.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/apple.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/banana.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/mango.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/papaya.webp" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/orange.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/dragon.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/jack.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/rian.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/pe.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/Avo.png" height="200px" width="100px"></span>
+      </marquee>   
+    </div>
+  </form>
+
+  <script src="js.js"></script>  
+
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Users Table</title>
+  <style>
+    body {
+      background: repeating-linear-gradient(
+        to right,
+        red,
+        yellow 20%,
+       rgb(239, 10, 205) 40%,
+        rgb(8, 247, 8) 60%,
+        tomato 80%,
+        blue 100%
+      );
+      background-size: 400%,500%;
+      filter: drop-shadow(-2px -2px 20px red)
+              drop-shadow(-2px -2px 20px rgb(243, 131, 131));
+      font-family: "Phetsarath OT";
+      margin: 0;
+      padding: 0;
+      color: white;
+      animation: bo 5s linear infinite;
+    } 
+    @keyframes bo {
+      20%{background-position: 100% 0%;}
+      40%{background-position: 100% 50%;}
+      60%{background-position: 0% 100%;}
+      80%{background-position: 100% 100%;}
+      100%{background-position: 50% 0%;}
+    }
+    
+    table {
+      width: 50%;
+      margin: 50px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #666;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .email{
+      background-image: linear-gradient(to right, red,yellow);
+      color: black;
+
+    }
+    .password{
+      background-image: linear-gradient(to right, rgb(245, 11, 218),rgb(235, 33, 33),rgb(12, 240, 12));
+      color: black;
+      
+    }
+      h2{
+      color: black;
+      margin-top: 70px;
+      }
+      .sr{
+        background-image: linear-gradient(to right, rgb(245, 11, 218),rgb(220, 234, 22),rgb(12, 236, 240));
+        color: black;
+      }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">📋 ບັນຊີທັງໝົດ</h2> 
+  <table>
+    <thead>   
+      <tr> 
+        <th class="sr">ລໍາດັບ</th>
+        <th class="email">📧 ອິເມວ</th>  
+        <th class="password">🔑 ລະຫັດຜ່ານ</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody"> 
+    </tbody>
+  </table>
+
+  <script>
+    const users = JSON.parse(localStorage.getItem("users")) || [];    
+    const tableBody = document.getElementById("userTableBody"); 
+    users.forEach((user, index) => {
+      const row = document.createElement("tr");   
+
+                                     //   index +  1 means  add 1 because the row start 0       
+      row.innerHTML = `
+
+        <td>${index + 1}</td>       
+        <td>${user.email}</td>      
+        <td>${user.password}</td>
+      `;
+      tableBody.appendChild(row); 
+    });
+  </script>
+  
+</body>
+</html>

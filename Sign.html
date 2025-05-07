@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  
+    .video-background {
+      position: fixed;      /* ຕິດກັບຈໍ */
+      top: 0;
+      left: 0;
+      min-width: 100%;      /* ໃຫ້ໃຫຍ່ພໍເຕັມຈໍ */
+      min-height: 100%;
+      object-fit: cover;    /* ໃຫ້ຄວາມກວ້າງ-ສູງ ຄົບທັງໝົດ */
+      z-index: -1;          /* ສົ່ງໄປຢູ່ຂ້າງຫຼັງ */
+    }
+    
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif; 
+    }
+
+                                         /*ສະແດງໃຫ້ຢູ່ທາງໜ້າ ຂອງ background 1 show */
+    form, .top_, .login, .bottom {
+      position: relative;           
+       z-index: 1; 
+    }
+  </style>
+</head>
+<body>
+
+   <video autoplay muted loop class="video-background">
+    <source src="video/vdo.mp4" type="video/mp4"> 
+   </video>
+
+
+  <form onsubmit="saveSignup(); return false;">
+    <div class="top_"> 
+      <h1>
+        <marquee behavior="alternate" onmouseover="this.stop()" onmouseout="this.start()">Create Your Account</marquee>
+      </h1>  
+    </div> 
+    
+    <div class="login">
+      <h2>Sign Up <span id="E">☠️</span></h2>  
+      <label for="email">E-mail<br>
+        <input type="email" name="email" placeholder="Enter your email" id="email" >
+      </label> <br>
+                                                                                 <!-- required also can use bc like alert or comfrim -->
+      <label for="password">Password<br> 
+        <input type="password" name="password" placeholder="Enter your password" id="password" minlength="6">
+
+      </label><br><br>
+      <button type="submit">Sign Up</button><br><br>
+      <a href="Login.html">Already have an account? Login</a>
+    </div>
+
+    <div class="bottom">  
+      <marquee id="BB">    
+        <span id="fruit"><img src="photos/apple.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/banana.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/mango.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/papaya.webp" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/orange.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/dragon.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/jack.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/rian.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/pe.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/Avo.png" height="200px" width="100px"></span>
+         <span id="fruit"><img src="photos/apple.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/banana.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/mango.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/papaya.webp" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/orange.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/dragon.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/jack.png" height="200px" width="100px"></span>
+        <span id="fruit"><img src="photos/rian.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/pe.png" height="200px" width="150px"></span>
+        <span id="fruit"><img src="photos/Avo.png" height="200px" width="100px"></span>
+      </marquee>   
+    </div>
+  </form>
+
+  <script src="js.js"></script>  
+</body>
+</html>

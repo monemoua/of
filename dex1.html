@@ -1,0 +1,2358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ຜົນປະໂຫຍດຂອງໝາກໄມ້</title>
+  <link rel="Icon" href="logo.png" >   
+  <link rel="stylesheet" href="apple.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Phetsarath OT', sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* For small screens (≤ 480px) */
+    @media (max-width: 480px) {
+      body {
+       
+        background-image: linear-gradient(to right, #36f6f6, red, yellow); 
+        font-size: 14px;
+      }
+    }
+
+    /* For medium-small screens (481px - 600px) */
+    @media (min-width: 481px) and (max-width: 600px) {
+      body {
+       
+        background-image: linear-gradient(to right, #36f6f6, red, yellow); 
+        font-size: 15px;
+      }
+    }
+
+    /* For medium screens (601px - 768px) */
+    @media (min-width: 601px) and (max-width: 768px) {
+      body {
+        
+        background-image: linear-gradient(to right, #36f6f6, red, yellow); 
+        font-size: 16px;
+      }
+    }
+
+    /* For large screens (≥ 769px) */
+    @media (min-width: 769px) {
+      body {
+        font-size: 20px;
+        background-image: linear-gradient(to right, #36f6f6, red, yellow); 
+      }
+    }
+    footer {
+      background-color: rgb(50, 50, 50);
+      width:100%;
+      color: white;  
+      padding: 30px 0;
+      font-family: Arial, sans-serif; /* Improve font for readability */
+    }
+    
+    footer .footer-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      text-align: center; /* Center the text for better alignment */
+    }
+    
+    footer .footer-section {
+      margin: 15px;
+      max-width: 250px; /* Limit the width for each section */
+    }
+    
+    footer .footer-section h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: white; /* Gold color for the headings */
+    }
+    
+    footer .footer-section p {
+      font-size: 14px;
+      margin: 8px 0;
+    }
+    
+    footer .footer-section a {
+      text-decoration: none;
+      color: white; /* Matching the header color */
+      font-weight: bold;
+      transition: color 0.3s ease; /* Smooth hover effect */
+    }
+    
+    footer .footer-section a:hover {
+      color: rgb(93, 80, 80); /* Slightly muted color when hovered */
+    }
+    
+    footer .footer-section p {
+      font-size: 16px; /* Adjust font size for readability */
+      line-height: 1.5; /* Improve spacing for readability */
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      footer .footer-section {
+        margin-bottom: 25px; 
+        text-align: center;
+        width: 90%; /* Ensure footer section takes full width on small screens */
+      }
+    }
+    
+     
+    nav {
+      margin-top: -150px; 
+      position: fixed;  
+      padding: 10px ; 
+       width: 60%; 
+      left: 20%;  
+      top: 10rem;
+      border-radius: 30px;
+      border: 2px solid gray;
+      box-shadow: 0 6px 6px black;
+      background-color: gray;   
+
+    }
+   nav:hover{
+    filter: drop-shadow(2px 2px 50px  rgb(192, 245, 35)); 
+   }
+    nav ul {
+                        /* list-style mean do not want to show . before text (nav ul) */ 
+      list-style: none; 
+      display: flex;
+      justify-content: space-around; 
+      justify-items: center;
+      flex-wrap: wrap;  
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+
+        color: rgb(249, 242, 242);
+        font-size: 1.2rem;
+        padding: 8px 16px;
+        border-radius: 10px; 
+
+
+      }
+      
+      .home {
+        background-color:none;
+        width: 70px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } 
+      .home:hover{
+        background-color: red;
+        filter: drop-shadow(20px 20px 50px yellow);
+        animation:  home 2s linear infinite, box 2s linear infinite;
+      }
+      @keyframes home{
+        40%{
+            color: green;
+        } 20%{
+            color: blue;
+        }40%{
+            color: yellow; 
+        } 
+      } @keyframes box {
+         0%{box-shadow: 20px 20px 50px yellow;}  
+      }  
+      .home:active{
+        background-color: rgb(19, 241, 19); 
+        filter: drop-shadow(2px 2px 50px rgb(235, 8, 8));  
+        animation: I 2s linear infinite;
+      } 
+      @keyframes I {
+        from{
+            transform: rotate(30deg);
+        } to{
+          transform: rotate(0deg);
+        }
+      }
+      .home.active{
+        background-color: rgb(19, 241, 19); 
+        filter: drop-shadow(2px 2px 50px rgb(235, 8, 8)); 
+        animation:  home 2s linear infinite, box 2s linear infinite;
+      }
+      @keyframes home{
+        40%{
+            color: green;
+        } 20%{
+            color: blue;
+        }40%{
+            color: yellow; 
+        } 
+      } @keyframes box {
+         0%{box-shadow: 20px 20px 50px yellow;}  
+      }   
+      
+      .about{
+        background-color: none;
+        width: 70px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .about:hover{
+        background-color: rgb(19, 237, 19);
+        filter: drop-shadow(20px 20px 50px rgb(221, 7, 150)); 
+        animation: about 2s linear infinite, aboutrun 2s linear infinite; 
+      }
+      @keyframes about {
+        40%{
+            color: rgb(221, 21, 21);
+        } 50%{
+            color: blue;
+        }80%{
+            color: yellow; 
+        }
+      } 
+      @keyframes aboutrun{
+        20%{box-shadow: 20px 20px 50px black;}
+      }
+      .about:active{
+        background-color: red;
+        animation: T 2s linear infinite;
+        filter: drop-shadow(2px 20px 50px yellow);
+      }
+      @keyframes T {
+        from {
+            transform: rotate(30deg);
+        }
+      }
+      .about.active{
+        background-color: rgb(244, 37, 37); 
+        filter: drop-shadow(2px 2px 50px rgb(205, 238, 15)); 
+        animation:  home 2s linear infinite, box 2s linear infinite;
+      }
+      @keyframes home{
+        40%{
+            color: green;
+        } 20%{
+            color: blue;
+        }40%{
+            color: yellow; 
+        } 
+      } @keyframes box {
+         0%{box-shadow: 20px 20px 50px yellow;}  
+      }   
+      .gallery{
+        background-color:none;
+        width: 70px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+      } 
+      .gallery:hover{
+        background-color: rgb(235, 69, 235);
+        animation: O 2s linear infinite, R 2s linear infinite;
+        filter: drop-shadow(20px 20px 50px rgb(12, 226, 12));
+      }
+      @keyframes O {
+        40%{
+            color: rgb(221, 21, 21);
+        } 50%{
+            color: blue; 
+        }80%{
+            color: yellow; 
+        }
+      }
+      @keyframes R {
+        30%{box-shadow: 20px 20px 50px tomato;}
+        50%{box-shadow: 20px 20px 50px rgb(27, 226, 9);}
+        60%{box-shadow: 20px 20px 50px rgb(3, 181, 230);}
+        80%{box-shadow: 20px 20px 50px rgb(220, 231, 12);}
+      }
+      .gallery:active{
+        background-color: rgb(192, 230, 24);
+        filter: drop-shadow(20px 20px 50px yellow);
+        animation: m 2s linear infinite;
+      }
+      @keyframes m {
+        from{
+            transform: rotate(30deg); 
+        }
+      }
+      .gallery.active{
+        background-color: rgb(29, 194, 244); 
+        filter: drop-shadow(2px 2px 20px rgb(237, 22, 219)); 
+        animation:  home 2s linear infinite, box 2s linear infinite;
+      }
+      @keyframes home{
+        40%{
+            color: green;
+        } 20%{
+            color: blue;
+        }40%{
+            color: yellow; 
+        } 
+      } @keyframes box {
+         50%{box-shadow: 20px 20px 50px yellow;}  
+         20%{box-shadow: 20px 20px 50px rgb(62, 241, 17);}  
+         80%{box-shadow: 20px 20px 50px rgb(21, 189, 235);}  
+      }   
+      .vony{
+        background-color: none;
+        width: 70px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .vony:hover{
+        background-color: rgb(217, 237, 37);
+        filter: drop-shadow(20px 20px 50px rgb(225, 18, 180));
+        animation: p 2s linear infinite;
+      }
+      @keyframes p {
+        20%{box-shadow: 20px 20px 50px yellow;}
+        40%{box-shadow: 20px 20px 50px rgb(18, 212, 25);}
+        60%{box-shadow: 20px 20px 50px rgb(227, 18, 18);}
+        80%{box-shadow: 20px 20px 50px rgb(32, 152, 208);}
+      }
+      .vony:active{
+        background-color: rgb(19, 227, 130);
+        filter: drop-shadow(20px 20px 50px rgb(6, 236, 48));  
+        animation: v 2s linear infinite;
+      }
+      @keyframes v {
+        from{
+            transform: rotate(30deg); 
+        }
+      }
+      .vony.active{
+        background-color: rgb(29, 194, 244); 
+        filter: drop-shadow(2px 2px 20px rgb(237, 22, 219)); 
+        animation:  home 2s linear infinite, box 2s linear infinite;
+      }
+      @keyframes home{
+        40%{
+            color: green;
+        } 20%{
+            color: blue;
+        }40%{
+            color: yellow; 
+        } 
+      } @keyframes box {
+         50%{box-shadow: 20px 20px 50px yellow;}  
+         20%{box-shadow: 20px 20px 50px rgb(235, 18, 177);}  
+         80%{box-shadow: 20px 20px 50px rgb(89, 235, 21);}  
+      }   
+      .profile{
+        background-color: none;
+        width: 80px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .profile:hover{
+      background-color: rgb(16, 244, 237);
+      filter: drop-shadow(20px 20px 50px yellow);
+      animation:  h 2s linear infinite;
+    }
+    @keyframes h {
+        20%{box-shadow: 20px 20px 50px red;}
+        40%{box-shadow: 20px 20px 50px rgb(8, 0, 255);}
+        60%{box-shadow: 20px 20px 50px rgb(10, 227, 32);}
+        80%{box-shadow: 20px 20px 50px rgb(193, 245, 5);}
+    }
+    .profile:active{ 
+        background-color: rgb(10, 241, 222);
+        filter: drop-shadow(20px 20px 50px yellow);
+        animation: g 2s linear infinite, lkl 2s linear infinite;
+    }
+    
+    @keyframes g {
+        30%{box-shadow: 20px 20px 50px blue;}
+        40%{box-shadow: 20px 20px 50px #ef06e3;}
+        60%{box-shadow: 20px 20px 50px rgb(0, 255, 55);}
+        80%{box-shadow: 20px 20px 50px rgb(186, 235, 9);}
+    }
+    @keyframes lkl {
+        from{
+            transform: rotate(30deg); 
+        }
+    }
+    .profile.active{ 
+      background-color: rgb(29, 194, 244); 
+      filter: drop-shadow(2px 2px 20px rgb(237, 22, 219)); 
+      animation:  home 2s linear infinite, box 2s linear infinite;  
+    }
+    @keyframes home{
+      40%{
+          color: green;
+      } 20%{
+          color: blue;
+      }40%{
+          color: yellow; 
+      } 
+    } @keyframes box {
+       50%{box-shadow: 20px 20px 50px yellow;}  
+       20%{box-shadow: 20px 20px 50px rgb(248, 27, 27);}  
+       80%{box-shadow: 20px 20px 50px rgb(86, 249, 37);}  
+    }   
+   
+    nav a { 
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 10px; 
+        font-family: 'Times New Roman', Times, serif; 
+      }
+      .house{
+        margin-top: -30px;
+        height: 80px; 
+    filter: drop-shadow(0 0 20px  rgb(248, 25, 222));
+
+      }
+      #head { 
+        background-image: linear-gradient(to bottom right, #1aec55, rgb(235, 16, 188));
+        width: 100%;
+        height: 150px;
+        padding-top: 10px;
+        position: fixed;  
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;   
+      }
+      section {   
+        display: none;
+        padding: 20px;  
+      }
+      .active {  
+        display: block;
+      }
+      .allpage{
+        margin-top: 200px; 
+      }
+  </style>
+</head>
+<body>  
+    <div id="head">
+    <nav> 
+        <ul class="top">   
+            <li> <img src="photos/house.png" width="80px" height="50px" class="house"> </li>  
+           <li class="home"><a href="#" onclick="showPage('home')">HOME</a></li> 
+           <li class="about"><a href="#" onclick="showPage('about')">ABOUT</a></li> 
+           <li class="gallery"><a href="#" onclick="showPage('gallery')">JUICE</a></li> 
+           <li class="vony"><a href="#" onclick="showPage('vony')">TREE</a></li>
+           <li class="profile"><a href="#" onclick="showPage('profile')">PROFILE </a></li> 
+        </ul> 
+     </nav>  
+    </div>
+            <div class="allpage" data-aos="fade-down"
+                                 data-aos-easing="linear"
+                                     data-aos-duration="1500">                          
+           <section id="home" class="active"> 
+
+         <h1 style="text-align: center; color:rgb(236, 248, 236)" >ສະບາຍດີທຸກທ່ານ ຍີນດີຕ້ອນຮັບເຂົ້າສູ່ເວບໄຊ ຜົນປະໂຫຍດຂອງໝາກໄມ້<p>ໃນນີ້ຈະມີແຕ່ໝາກໄມ້ທີ່ມີຄຸນນະພາບ ແລະ ມີປະໂຫຍດສູງ</p>
+             <p>ແລະ  ອື່ນໆ </p></h1>
+
+
+        <div class="parent">
+
+              <img src="photos/apple3.jpg" width="300px" height="200px" class="img" data-aos="fade-up-right"> 
+              <img src="photos/orange2.jpg" width="300px" height="200px" class="img" data-aos="fade-up-right">
+
+             <img src="photos/stobrry.jpg" width="300px" height="200px" class="img" data-aos="fade-up-right">
+            <img src="photos/water2.avif" width="300px" height="200px" class="img" data-aos="fade-up-right">
+
+          <img src="photos/papaya2.webp" width="300px" height="200px" class="img2" data-aos="fade-up-right" >
+          <img src="photos/da.jpg" width="300px" height="200px" class="img2" data-aos="fade-up-right">
+
+          <img src="photos/red.avif" width="300px" height="200px" class="img2" data-aos="fade-up-right">
+          <img src="photos/black.avif" width="300px" height="200px" class="img2" data-aos="fade-up-right">
+
+           <img src="photos/ດຳ.avif" width="300px" height="200px" class="img3"data-aos="fade-up-right" >
+          <img src="photos/allfruit.jpeg" width="300px" height="200px" class="img3" data-aos="fade-up-left">
+
+          <img src="photos/afff.jpeg" width="300px" height="200px" class="img3" data-aos="fade-up-right">
+          <img src="photos/ap.avif" width="300px" height="200px" class="img3" data-aos="fade-up-right">
+        
+      </div>
+
+
+      <div class="vdohomepage">
+             <!--                  
+                 controls mean can play this vdo , autoplay : play auto when u open ur web ,
+                  muted : can't hear the sounds of vdo , loop : it play always   -->
+                 
+                  <video controls autoplay muted loop width="600" height="400" data-aos="fade-right">    
+                    <source src="video/vdosy.mp4" type="video/mp4">
+                    <source src="video/vdosy.webm" type="video/webm">     
+            </video>
+            
+            <video controls autoplay muted loop width="600px" height="400px" data-aos="fade-left">    
+              <source src="video/af.mov" type="video/mp4">
+              <source src="video/vdosy.webm" type="video/webm">      
+            </video>
+     
+      </div>
+
+
+      <div data-aos="fade-up-left">  
+       <button class="infomore"><a href="ຂໍ້ມູນເພີ່ມ.html" class="moreinfo">ຂໍ້ມູນເພີ່ມເຕີມ</a></button>
+        </div>
+
+
+       
+  <div class="footer" data-aos="flip-up">
+    <p id="foot" data-aos="zoom-in-down">
+      ໝາກໄມ້ຂ້າງເທິງນີ້ແມ່ນພາກສ່ວນໜື່ງທີ່ຂ້າພະເຈົ້າຈະມາແນະນຳໃຫ້ທຸກທ່ານຮູ້ຈັກ ເພາະວ່າ ໝາກໄມ້ເຫຼົ່ານີ້ມີປະໂຫຍດ ແລະ ຄູນນະພາບສູງ
+    </p>
+
+    <h2 data-aos="zoom-in-down">ສາມາດຕິດຕໍ່ພວກເຮົາໄດ້ຫຼາຍຊ່ອງທາງ:</h2>
+
+
+       <div class="texticon">
+         <div class="contact-item" data-aos="zoom-in">
+            <img src="photos/face.png" alt="Facebook" class="social-icon">
+                  <a href="https://www.facebook.com/share/1LBXKWcsBu/?mibextid=wwXIfr" data-aos="zoom-in-left">: Mone Moua</a>
+                 </div>
+    
+         <div class="contact-item" data-aos="zoom-in">
+            <img src="photos/whatsapp.png" alt="WhatsApp" class="whatsapp">
+                   <a href="http://wa.me/+8562059916315" data-aos="zoom-in-left">: 020 54 270 657</a>
+              </div>
+    
+            <div class="contact-item" data-aos="zoom-in">
+            <img src="photos/ig.png" alt="Instagram" class="ig">
+           <span data-aos="zoom-in-left">: Mone7609</span>
+        </div>
+    </div>
+
+    <div class="bottomtext">  
+    
+    <span data-aos="zoom-in-down" class="center">
+      ທຸກທ່ານສາມາດພົວພັນກັບພວກເຮົາໄດ້ທຸກເມື່ອ ຖ້າຫາກທ່ານຢາກຮູ້ຂໍ້ມູນເພີ່ມເຕີມ ພວກເຮົາຍິນດີຕ້ອນຮັບທຸກເວລາ
+    </span>
+
+    <span data-aos="zoom-in-left" class="center1">
+      ທຸກທ່ານເຂົ້າໄປໜ້າກ່ຽວກັບ ແລ້ວ ສາມາດກົດຮູບໝາກໄມ້ໄດ້ ເພາະຈະສະແດງເນື້ອຫາ
+    </span>
+    </div>
+  </div>
+          
+               <button  onclick="logoutnow()" class="goout" data-aos="zoom-in-down"> ອອກຈາກລະບົບ </button>   
+                      
+
+     </section>
+   
+     <section id="about">  
+       <h1 style="text-align: center; color:white" data-aos="fade-up-left"> ສະບາຍດີທຸກທ່ານ ໃນໜ້ານີ້ແມ່ນການສະແດງຜົນປະໂຫຍກຂອງໝາກໄມ້</h1>
+       <p style="text-align: center; color:white" data-aos="fade-up-left"> ທຸກທ່ານສາມາດກວດເບີ່ງໄດ້ ແລະ ຊະນິດທີ່ທ່ານຕ້ອງການບໍ່ມີໃນນີ້ພວກເຮົາກໍຂໍໂທດຂໍອະໄພຫຼາຍ. </p>
+        <p style="text-align: center; color:white" data-aos="fade-up-left"> ເພາະບາງຊະນິດ ອາດບໍ່ມີຜົນປະໂຫຍດ ທາງພວກເຮົາເລີຍບໍ່ໄດ້ເອົາມາ ຫຼື ສາມາດຕິດຕໍ່ພົວພັນກັບພວກເຮົາໄດ້</p>  
+
+
+        <div class="textboxofaboutpage">  
+           <span data-aos="fade-down-left">
+
+            <div class="canrun">    
+              <div class="pageabout">                                                 
+                <div class="pageofapple" onclick="apple(this)" data-aos="fade-down-left">
+                  <img src="photos/apple2.jpg" width="300px" height="200px" class="apple">
+                  <p class="textofapple">
+
+                    ແອັບເປິ້ລ ແມ່ນໝາກໄມ້ຮູບຮ່າງກົມ ທີ່ຂຶ້ນຢູ່ຕົ້ນແອັບເປິ້ລ. ສີຂອງມັນສາມາດເປັນສີແດງ, ສີຂຽວ ຫຼື ສີເຫຼືອງ, ແລະຂ້າງໃນມີເນື້ອສີຂາວ. ແອັບເປິ້ລມີລົດຊາດຫວານ ຫຼື ສົ້ມນ້ອຍຫນຶ່ງ, ແລະ ຄົນນິຍົມກິນດິບ, ເຮັດເປັນນໍ້າໝາກໄມ້,
+                     ຫຼື ໃຊ້ໃນການປຸງອາຫານ (ເຊັ່ນ, ແອັບເປິ້ລພາຍ). ແອັບເປິ້ລເປັນໝາກໄມ້ທີ່ດີຕໍ່ສຸຂະພາບ ເນື່ອງຈາກມີໃຍອາຫານ ແລະ ວິຕາມິນ C ສູງ. <br> <br>ວິຕາມິນ C: ປະມານ 8.4 ມິລລິກຣາມ (ແມ່ນ 14% ຂອງຄ່າທີ່ຮ່າງກາຍຕ້ອງການຕໍ່ມື້)
+
+                     <br> ນໍ້າຕານ: ປະມານ 19 ກຣາມ (ເປັນນໍ້າຕານຈາກທຳມະຊາດ)
+                     
+                      <br>ໃຍອາຫານ: ປະມານ 4 ກຣາມ
+                     
+                     <br> ແຄລໍຣີ: ປະມານ 95 ແຄລໍຣີ
+
+                     <br> ນໍ້າ: 86%   
+                     <br> <strong>ຂໍ້ເສຍ:</strong>ນໍ້າຕານຈາກທຳມະຊາດ: ແມ່ນວ່າແອັບເປີ້ມີນໍ້າຕານຈາກທຳມະຊາດ ແຕ່ກໍ່ຄວນບໍລິໂພກໃນປະລິມານທີ່ເໝາະສົມ ໂດຍສະເພາະຜູ້ທີ່ມີບັນຫານໍ້າຕານໃນເລືອດ
+
+                     ໄຂມັນ ແລະ ໂປຣຕີນຕໍ່າ: ຄວນຮັບປະທານອາຫານທີ່ມີໄຂມັນດີ ແລະ ໂປຣຕີນເພີ່ມເຕີມ ເພື່ອຄວາມສົມດຸນຂອງອາຫານ
+                     
+                      
+   
+                  </p>
+
+                  <h1 class="ap">ໝາກເອັມເປີ້ນ</h1>
+                  <p class="ap">ນີ້ແມ່ນຜົນປະໂຫຍດຂອງໝາກໂປມ...</p>
+                </div>
+              </div> 
+            </div>
+            
+           </span>
+          
+
+          <span data-aos="zoom-in-up">
+           
+            <div class="pageabou">                                                  
+              <div class="pageofapple" onclick="apple(this)">
+               <img src="photos/w.jpg" width="300px" height="200px" class="apple">
+               <p class="textofapple">ໝາກໂມ ແມ່ນຜົນໄມ້ທີ່ມີນໍ້າຈຳນວນຫຼາຍ (ປະມານ 92%). ມັນມີແຄລໍຣີຕ່ຳ ແລະມີວິຕາມິນສູງ ເຊັ່ນ ວິຕາມິນ C ແລະ ວິຕາມິນ A.
+                  ຍັງມີສານຕ້ານອະນຸມູນອິດສະຫຼະເຊັ່ນ lycopene ຊ່ວຍປົກປ້ອງເຊວ໌ຮ່າງກາຍ. ໝາກໂມແມ່ນຜົນໄມ້ທີ່ສົດຊື່ນ, ຊ່ວຍໃຫ້ຮ່າງກາຍຊຸ່ມນໍ້າ ແລະດີຕໍ່ຜິວ ແລະຫົວໃຈ. <br> <br>
+                  ແຄລໍຣີ: 60
+
+                  ນໍ້າຕານ: 12.4g 
+
+                <br>  ຄາໂບໄຮເດຣດ: 15.1g
+
+                <br> ໃຍອາຫານ: 0.8g
+
+                <br> ໂປຣຕີນ: 1.2g
+
+                <br> ໄຂມັນ: 0.3g
+
+                <br> ວິຕາມິນ C: 16.2mg
+
+                <br> ວິຕາມິນ A: 56 mcg
+
+                <br> ໂພແທສຽມ: 224mg 
+                <br> <strong>ຂໍ້ເສຍ:</strong> ແມ້ວ່າຫມາກໂມຈະຫວານຈາກນໍ້າຕານທຳມະຊາດ ແຕ່ຖ້າກິນຫຼາຍຫຼາຍກໍສາມາດເຮັດໃຫ້ນ້ຳຕານໃນເລືອດສູງຂຶ້ນໄດ້ຫມາກໂມມີນ້ຳຫຼາຍ ຖ້າກິນຫຼາຍເກີນໄປ ບາງຄົນອາດຈະຮູ້ສຶກທ້ອງໃສ ຫຼື ທ້ອງອືດ
+
+                 </p>
+                   <h1 class="ap">ໝາກໂມ</h1>
+                  <p class="ap">ນີ້ແມ່ນຜົນປະໂຫຍດຂອງໝາກໂມ ໃຫ້ທ່ານກົດໃສ່ຮູບແລະ ຂໍ້ມູນຈະສະແດງມາ</p>
+               </div>
+      
+             </div> 
+          </span>
+
+          <span data-aos="zoom-in-down">
+            <div class="pageabo">                                                 
+              <div class="pageofapple" onclick="apple(this)">
+               <img src="photos/ba.avif" width="300px" height="200px" class="apple">
+               <p class="textofapple">ໝາກກ້ວຍເປັນແຫຼ່ງຂອງວິຕາມິນ ແລະແຮ່ທາດຫຼາຍຊະນິດ, ໂດຍສະເພາະໂພແທດຊຽມ, ວິຕາມິນບີ 6 ແລະ ວິຕາມິນຊີ (1). ໂພແທດຊຽມ. ໝາກກ້ວຍເປັນແຫຼ່ງໂພແທດຊຽມທີ່ດີ. 
+                        ອາຫານທີ່ມີໂພແທດຊຽມສູງສາມາດຫຼຸດຄວາມດັນເລືອດໃນຄົນທີ່ມີລະດັບສູງແລະມີປະໂຫຍດຕໍ່ສຸຂະພາບຂອງຫົວໃຈ. <br>
+                        ແຄລໍຣີ: 178
+
+                    <br>   ນໍ້າຕານ: 28g
+
+                    <br>  ຄາໂບໄຮເດຣດ: 45g
+
+                    <br>  ໃຍອາຫານ: 5g
+
+                    <br>  ໂປຣຕີນ: 2.2g
+
+                    <br>  ໄຂມັນ: 0.6g
+
+                    <br>   ໂພແທສຽມ: 806mg
+
+                    <br>  ວິຕາມິນ C: 18.4mg
+
+                    <br>  ວິຕາມິນ B6: 0.8mg 
+                     <strong>ຂໍ້ເສຍ:</strong> ກ່ວຍແມ່ນຜົນໄມ້ດີ ແຕ່ຄວນກິນໃນຂະໜາດທີ່ພອດດີ. ການກິນເກີນ ຫຼື ບໍ່ຄຳນຶງເຖິງນໍ້າຕານ ສາມາດສົ່ງຜົນເສຍໄດ້.
+               </p>
+               <h1 class="ap">ໝາກກ້ວຍ</h1>
+               <p class="ap">ນີ້ແມ່ນຜົນປະໂຫຍດຂອງໝາກກ້ວຍ ໃຫ້ທ່ານກົດໃສ່ຮູບແລະ ຂໍ້ມູນຈະສະແດງມາ</p>
+               </div>
+     
+             </div> 
+
+          </span>
+    
+        </div>
+
+  <div class="textoffruitsm"> 
+
+
+            <div class="st" data-aos="flip-left">
+              <div class="content" data-aos="fade-down-left">
+                <img src="photos/st.png" class="sy">
+                <div class="text"> 
+
+                  <h1>ສະຕໍເບີຣີ</h1> 
+                  <p> ແມ່ນຜົນໄມ້ຂະໜາດນ້ອຍ ມີສີແດງ ລົດຊາດຫວານປົກເປົ້າ ແລະອອກໝົດໝົດ. ມີເມັດນ້ອຍໆຢູ່ຜິວຂ້າງນອກ ແລະຮູບຮ່າງເປັນຮູບຫົວໃຈ.
+
+                    ແຄລໍຣີ: ~32 ແຄລໍຣີ
+
+                    ຄາໂບໄຮເດຣດ: 7.7 ກຣາມ
+                    
+                    ນໍ້າຕານ: 4.9 ກຣາມ
+                    
+                    ໃຍອາຫານ: 2 ກຣາມ
+                    
+                    ໂປຣຕີນ: 0.7 ກຣາມ
+                    
+                    ໄຂມັນ: 0.3 ກຣາມ
+                    
+                    ວິຕາມິນ C: ~59 ມິລລິກຣາມ (ປະມານ 65% ຂອງຄ່າທີ່ແນະນຳຕໍ່ມື້)
+                    
+                    ໂພແທສຽມ: ~153 ມິລລິກຣາມ
+                    
+                    ນ້ຳ: ~91%
+                    
+                    <br> <strong>ຂໍ້ເສຍ:</strong>ອາດຈະເຮັດໃຫ້ເກີດອາການແພ້ໃນບາງຄົນ
+
+                    ມັກຈະສີດຢາຂ້າແມງໄມ້ - ດີທີ່ສຸດແມ່ນລ້າງໃຫ້ສະອາດຫຼືຊື້ແບບ organic
+                    
+                                        
+           
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+
+
+            <div class="mg" data-aos="zoom-in-left"> 
+              <div class="content">
+                <div class="text"> 
+                  <h1>ໝາກມ່ວງ</h1> 
+                  <p>ເປັນໝາກໄມ້ເຂດຮ້ອນທີ່ມີເນື້ອຫວານ, ມີນ້ຳ ແລະ ມີແກ່ນໃຫຍ່ຢູ່ພາຍໃນ. ມັນ​ມີ​ຜິວ​ຫນັງ​ກ້ຽງ​ທີ່​ສາ​ມາດ​ເປັນ​ສີ​ຂຽວ​, ສີ​ເຫຼືອງ​, ຫຼື​ສີ​ແດງ​ໃນ​ເວ​ລາ​ທີ່​ສຸກ​. ໝາກມ່ວງເປັນທີ່ນິຍົມສຳລັບລົດຊາດທີ່ແຊບຊ້ອຍ ແລະ ມັກກິນສົດ ຫຼື ໃຊ້ໃນນ້ຳໝາກມ່ວງ, ນ້ຳປັ່ນ, ສະຫຼັດ ແລະ ເຂົ້າໜົມຫວານ.
+
+                  <br>  ແຄລໍຣີ: ປະມານ 120 kcal
+
+                  <br> ນໍ້າຕານ: ປະມານ 28 ກຣາມ (ນໍ້າຕານຈາກທຳມະຊາດ)
+
+                  <br> ໃຍອາຫານ: ປະມານ 3 ກຣາມ
+
+                  <br> ວິຕາມິນ C: ປະມານ 60 ມິລລິກຣາມ (ປະມານ 66% ຂອງຄ່າທີ່ແນະນຳຕໍ່ມື້)
+
+                  <br> ວິຕາມິນ A: ສູງ ~ 1125 IU 
+                   <br><strong>ຂໍ້ເສຍ:</strong> ວາມສ່ຽງຕໍ່ການເກີດອາການແພ້: ບາງຄົນອາດຈະມີອາການແພ້ຫມາກມ່ວງ, ໂດຍສະເພາະໃນເວລາທີ່ບໍລິໂພກຜິວຫນັງ.
+                    
+                  </p>
+                </div>
+                <img src="photos/mg.png" class="sy">
+              </div>
+            </div>
+             
+    </div>
+
+    
+
+    <div class="textofboxrundance">   
+
+             <div class="card" data-aos="zoom-in-up">
+               <div class="card-inner">
+                 <div class="card-sidefront"> 
+                   <div> <img src="photos/co2.png" width="300px" height="200px"  ></div> 
+                 </div>
+                 <div class="card-sideback"> 
+                   <div> ໝາກພ້າວ  ເປັນໝາກໄມ້ເຂດຮ້ອນທີ່ມາຈາກຕົ້ນໝາກພ້າວ. ມັນ​ມີ​ເປືອກ​ນອກ​ແຂງ​ແລະ​ມີ​ນໍ້າໃນ​, ພາຍ​ໃນ​ທີ່​ມີ​ສີ​ຂາວ​, ເນື້ອ​ຫນັງ​ທີ່​ຮູ້​ຈັກ​ເປັນ​ຊີ້ນ​ຫມາກ​ພ້າວ​. ຫມາກພ້າວຖືກນໍາໃຊ້ໃນຮູບແບບຕ່າງໆເຊັ່ນຫມາກພ້າວສົດ, ນໍ້າຫມາກພ້າວ, ນົມຫມາກພ້າວ, ແລະ ນໍ້າມັນຫມາກພ້າວ.
+
+                         <br>   ແຄລໍຣີ: ~660 ແຄລໍຣີ,
+
+                         ຄາບອຮອບ: ~16.3 ກຣາມ,
+
+                          ເຝົາ: ~9 ກຣາມ,
+
+                         ນໍ້າຕານ: ~6.2 ກຣາມ ,
+   
+                          ໂປຣຕີນ: ~6.3 ກຣາມ,
+
+                           ຟັດ: ~63.8 ກຣາມ (ຫຼັກທີ່ມີຟັດສະຫຼັງ),
+
+                         ວິຕາມິນ C: ~3.4 ມິລລິກຣາມ, 
+
+                        ພອດສິຍົກ: ~558 ມິລລິກຣາມ, 
+
+                         ມາກເນຍຊິຍ: ~90 ມິລລິກຣາມ.  
+
+                     </div>
+                 </div>
+               </div>
+             </div>
+             
+                                                  
+             <div class="card" data-aos="zoom-out"> 
+               <div class="card-inner">
+                 <div class="card-sidefront">
+                   <div> <img src="photos/da.png" width="300px" height="200px"  ></div> 
+                 </div>
+                 <div class="card-sideback"> 
+                   <div>ໝາກມັງກອນ, ເອີ້ນອີກຊື່ໜຶ່ງວ່າ pitaya, ເປັນໝາກໄມ້ເຂດຮ້ອນທີ່ເຕີບໃຫຍ່ຢູ່ເທິງຕົ້ນກະບອງ. ມັນ​ມີ​ຜິວ​ຫນັງ​ສີ​ບົວ​ຫຼື​ສີ​ເຫຼືອງ​ສົດ​ໃສ​ມີ​ເນື້ອ​ຫນັງ​ສີ​ຂາວ​ຫຼື​ສີ​ແດງ​ແລະ​ເມັດ​ສີ​ດໍາ​ຂະ​ຫນາດ​ນ້ອຍ​ຢູ່​ໃນ​. ມັນເບິ່ງງາມແລະມີລົດຊາດຫວານອ່ອນໆ. ໝາກມັງກອນຈະເລີນເຕີບໂຕໃນອາຊີຕາເວັນອອກສຽງໃຕ້, ອາເມລິກາກາງ, ແລະອາເມລິກາໃຕ້.
+                 <br>   ແຄລໍຣີ: ~660 kcal,
+
+                    ຄາບອຮອບ: ~16.3 ກຣາມ,
+                    
+                    ເຝົາ (Fiber): ~9 ກຣາມ,
+                    
+                    ນໍ້າຕານ: ~6.2 ກຣາມ,
+                    
+                    ໂປຣຕີນ: ~6.3 ກຣາມ,
+                    
+                    ໄຂມັນ: ~63.8 ກຣາມ (ສ່ວນໃຫຍ່ແມ່ນໄຂມັນດີ),
+                    
+                    ວິຕາມິນ C: ~3.4 ມິລລິກຣາມ,
+                    
+                    ໂພສຟໍຣັສ: ~558 ມິລລິກຣາມ, 
+                    
+                    ແມກນີເຊຍມ: ~90 ມິລລິກຣາມ.
+                     </div>
+                 </div>
+               </div>
+             </div>
+             
+ 
+ 
+             <div class="card" data-aos="zoom-in-up">
+               <div class="card-inner">
+                 <div class="card-sidefront">
+                   <div> <img src="photos/jac.png" width="300px" height="200px" ></div>
+                 </div>
+                 <div class="card-sideback"> 
+                   <div>  ບຳລຸງຜິວ ແລະ ຕ້ານອະນຸມູນອິສະລະ  
+
+                    ຊ່ວຍການຍ່ອຍ ແລະ ປ້ອງກັນທ້ອງຜູກ
+                    
+                    ກະຕຸ້ນລະບົບພຸມຕ້ານທານ
+                    
+                    ຊ່ວຍລົດໄຂມັນໃນເລືອດ ແລະຮັກສາຫົວໃຈ
+                    
+                    ມີແຮ່ທາດຈຳເປັນສູງ (ແມກນີເຊຍມ, ໂພສຟໍຣັສ)   
+                    
+                    ຄວາມຫວານຕ່ໍາ ດີສໍາລັບຜູ້ລົດນໍ້າໜັກ
+                    
+                  <br>   ແຄລໍຣີ: ~660 kcal,
+
+                    ຄາບອຮອບ: ~16.3 ກຣາມ,
+                    
+                    ເຝົາ (Fiber): ~9 ກຣາມ,
+                    
+                    ນໍ້າຕານ: ~6.2 ກຣາມ,
+                    
+                    ໂປຣຕີນ: ~6.3 ກຣາມ,
+                    
+                    ໄຂມັນ: ~63.8 ກຣາມ (ສ່ວນໃຫຍ່ແມ່ນໄຂມັນດີ),
+                    
+                    ວິຕາມິນ C: ~3.4 ມິລລິກຣາມ,
+                    
+                    ໂພສຟໍຣັສ: ~558 ມິລລິກຣາມ,
+                    
+                    ແມກນີເຊຍມ: ~90 ມິລລິກຣາມ,
+                    </div>
+                    
+                                          
+
+                 </div>
+               </div>
+             </div>
+             
+           
+            <div class="card" data-aos="zoom-in-up">
+              <div class="card-inner">
+                <div class="card-sidefront">
+                  <div> <img src="photos/ppy.png" width="300px" height="200px" ></div>
+                  </div>
+                   <div class="card-sideback"> 
+                    <div>ຊ່ວຍຍ່ອຍອາຫານ: ມີເອນໄຊມ໌ຊື່ວ່າ papain ຊ່ວຍໃຫ້ຍ່ອຍອາຫານໄດ້ດີ.
+
+                    ປ້ອງກັນໂລກເຊື້ອໄວຣັສ: ວິຕາມິນ C ຊ່ວຍເພີ່ມພູມຄຸ້ມກັນ.
+                    
+                    ບຳລຸງຜິວ: ຊ່ວຍໃຫ້ຜິວພັນຊຸ່ມຊື້ນ ແລະ ຕ້ານຄວາມແກ່.
+                    
+                    ຊ່ວຍຂັບຖ່າຍ: ໃຍອາຫານສູງ ຊ່ວຍລົດອາການທ້ອງຜູກ.
+                    
+                    ສົ່ງເສີມການມອງເຫັນ: ມີວິຕາມິນ A ໃນປະລິມານດີ. <br>
+                    ແຄລໍຣີ: ປະມານ 43 kcal,
+
+                    ຄາບອຮອບ: 10.8 ກຣາມ,
+                    
+                    ນໍ້າຕານ: 7.8 ກຣາມ,
+                    
+                    ໃຍອາຫານ: 1.7 ກຣາມ,
+                    
+                    ໂປຣຕີນ: 0.5 ກຣາມ,
+                    
+                    ຟັດ: 0.3 ກຣາມ,
+                    
+                    ວິຕາມິນ C: ສູງຫຼາຍ (~61.8 mg ຫຼື 103% ຂອງຄ່າທີ່ຮ່າງກາຍຕ້ອງການ/ມື້),
+                    
+                    ວິຕາມິນ A: ~950 IU,
+                    
+                    ແຄລເຊຍມ: ~20 mg,
+                    
+                    ໂພແທສຊຽມ: ~182 mg.
+                    
+                     </div>
+                </div>
+              </div>
+            </div>
+                                                 
+            <div class="card" data-aos="zoom-in-left"> 
+              <div class="card-inner">
+                <div class="card-sidefront">
+                  <div> <img src="photos/redj.png" width="300px" height="200px"  ></div> 
+                </div>
+                <div class="card-sideback"> 
+                  <div>ຕ້ານອະນຸມູນອິດສະລະ: ເຂັ້ມຂັ້ນກັບສານແອນຕິອອກຊິແດນ.
+
+                    ບຳລຸງຫົວໃຈ: ຊ່ວຍຫຼຸດຄວາມດັນໂລຫິດ ແລະ ລົດໄຂມັນໃນເລືອດ.
+                    
+                    ຕ້ານການອັກເສບ: ມີສານຕ້ານອັກເສບທີ່ຊ່ວຍກັບໂລກເກັດຈາກການອັກເສບ.
+                    
+                    ຊ່ວຍການຍ່ອຍອາຫານ: ໃຍອາຫານສູງ ຊ່ວຍໃຫ້ລຳໄສ້ເຄື່ອນໄຫວດີ.
+                    
+                    ດີຕໍ່ຜິວໜັງ: ຊ່ວຍປ້ອງກັນຄວາມແກ່ກ່ອນວັຍ ແລະ ໃຫ້ຜິວສວ່າງໃສ.
+                   <br>
+                   ແຄລໍຣີ: ~83 kcal,
+
+                   ຄາບອຮອບ: ~19 ກຣາມ,
+
+                    ນໍ້າຕານ: ~13.7 ກຣາມ,
+
+                    ໃຍອາຫານ: ~4 ກຣາມ,
+
+                    ໂປຣຕີນ: ~1.7 ກຣາມ,
+
+                    ຟັດ: ~1.2 ກຣາມ,
+
+                    ວິຕາມິນ C: ~10.2 mg,
+
+                    ວິຕາມິນ K: ~16.4 mcg,
+
+                    ໂພແທສຊຽມ: ~236 mg.
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="card" data-aos="zoom-in-right">
+              <div class="card-inner">
+                <div class="card-sidefront">
+                  <div> <img src="photos/or.png" width="300px" height="200px" ></div>
+                </div>
+                <div class="card-sideback"> 
+                  <div>ຕ້ານພະຍາດຫວັດ: ເນື່ອງຈາກວິຕາມິນ C ສູງ ຊ່ວຍເພີ່ມພູມຄຸ້ມກັນ.
+
+                    ປ້ອງກັນຄວາມແກ່ໄວ: ມີສານຕ້ານອະນຸມູນອິດສະລະ.
+                    
+                    ປົກປ້ອງຫົວໃຈ: ຊ່ວຍຫຼຸດໄຂມັນໃນເລືອດ ແລະ ຄວາມດັນໂລຫິດ.
+                    
+                    ຊ່ວຍຂັບຖ່າຍ: ໃຍອາຫານສູງ ດີຕໍ່ລຳໄສ້.
+                    
+                    ບຳລຸງຜິວພັນ: ວິຕາມິນ C ຊ່ວຍໃຫ້ຜິວສວ່າງໃສ ແລະ ໝົດຄວາມຫມອງຄຳ.
+                   <br> <br>ແຄລໍຣີ: ~47 kcal,
+
+                   ຄາບອຮອບ: ~11.8 ກຣາມ,
+                   
+                   ນໍ້າຕານ: ~9.4 ກຣາມ,
+                   
+                   ໃຍອາຫານ: ~2.4 ກຣາມ,
+                   
+                   ໂປຣຕີນ: ~0.9 ກຣາມ,
+                   
+                   ຟັດ: ~0.1 ກຣາມ,
+                   
+                   ວິຕາມິນ C: ~53.2 mg (ເກືອບ 90% ຂອງທີ່ຮ່າງກາຍຕ້ອງການ/ມື້),
+                   
+                   ໂພແທສຊຽມ: ~181 mg,
+                   
+                   ແຄລເຊຍມ: ~40 mg,
+                   
+      
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+    
+    </div>
+
+
+    <div class="textofcolorcanrunaroundtheboreder">
+
+
+
+
+                <div class="colorrunofborder" data-aos="flip-left"  
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
+    
+                <img src="photos/ooo.png" alt="apple" height="200px" width="300px"> 
+                <div class="coloroftextfig">
+                <h4>hellow Fig</h4> 
+                <p> ຊ່ວຍລະບົບຂັບຖ່າຍ: ໃຍອາຫານສູງ ດີຕໍ່ລຳໄສ້ ແລະ ກະຕຸ້ນການຂັບຖ່າຍ.
+
+                  ປ້ອງກັນຄວາມດັນໂລຫິດ: ເນື່ອງຈາກມີໂພແທສຊຽມສູງ. 
+                  
+                  ບຳລຸງກະດູກ: ແຄລເຊຍມ ແລະ ແມກນີເຊຍຊ່ວຍໃນການສ້າງກະດູກແຂງແຮງ.
+                  
+                  ມີສານຕ້ານອະນຸມູນອິດສະລະ: ຊ່ວຍປ້ອງກັນພະຍາດ ແລະ ຊະລໍາອາຍຸ.
+                  
+                  ດີຕໍ່ລະບົບຫົວໃຈ: ລົດໄຂມັນໃນເລືອດ ແລະ ປ້ອງກັນໂຣກຫົວໃຈ. <br> 
+                  ແຄລໍຣີ: ~74 kcal,
+
+                  ຄາບອຮອບ: ~19.2 ກຣາມ,
+                  
+                  ນໍ້າຕານ: ~16.3 ກຣາມ,
+                  
+                  ໃຍອາຫານ: ~2.9 ກຣາມ,
+                  
+                  ໂປຣຕີນ: ~0.75 ກຣາມ,
+                  
+                  ຟັດ: ~0.3 ກຣາມ,
+                  
+                  ວິຕາມິນ B6: ~0.11 mg,
+                  
+                  ໂພແທສຊຽມ: ~232 mg,
+                  
+                  ແຄລເຊຍມ: ~35 mg.
+                  
+                   </p>   
+                </div>
+              </div>
+              
+              <div class="colorrunofborde2" data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000">
+  
+                   <img src="photos/Avo.png" alt="apple" height="200px" width="300px">
+                   <div class="coloroftextAvocado">
+                   <h4>hellow Avocado</h4>
+                  <p> ດີຕໍ່ຫົວໃຈ  ໄຂມັນດີຊ່ວຍລົດໄຂມັນເລວ ແລະ ປ້ອງກັນໂຣກຫົວໃຈ
+
+                    ປະສິດທິພາບຂອງສະມາດສົດຈຳ  ມີໂພແທສຊຽມ ແລະ ໄຂມັນດີທີ່ຊ່ວຍໃຫ້ເສົາປະສາດແຂງແຮງ
+                    
+                    ດີຕໍ່ລຳໄສ້  ໃຍອາຫານສູງ ຊ່ວຍໃນການຂັບຖ່າຍ
+                    
+                    ສ້າງຄວາມງາມຜິວພັນ ໄຂມັນດີ ແລະ ວິຕາມິນຊ່ວຍຜິວໃຫ້ຊຸ່ມຊື້ນ ລົດຄວາມແກ່ກ່ອນໄວ
+                    
+                    ປ້ອງກັນມະເຮັງ  ມີສານຕ້ານອະນຸມູນອິດສະລະຊ່ວຍລົດຄວາມສ່ຽງ. <br>
+                    ແຄລໍຣີ: ~160 kcal,
+
+                    ຄາບອຮອບ: ~8.5 ກຣາມ,
+
+                     ນໍ້າຕານ: ~0.7 ກຣາມ,
+
+                    ໃຍອາຫານ: ~6.7 ກຣາມ,
+
+                    ໂປຣຕີນ: ~2 ກຣາມ,
+
+                    ຟັດ (ໄຂມັນ): ~15 ກຣາມ (ສ່ວນໃຫຍ່ແມ່ນໄຂມັນດີ),
+
+                    ວິຕາມິນ K: ~21 µg,
+
+                    ຟໍແລດ: ~81 µg,
+
+                    ໂພແທສຊຽມ: ~485 mg.
+                    
+                    </p>   
+                   </div>
+              </div>
+
+               <div class="colorrunofborde3" data-aos="flip-right">
+  
+                   <img src="photos/avoca..png" alt="apple" height="200px" width="300px">
+                   <div class="coloroftextgrape">
+                   <h4>hellow Grape</h4> 
+                  <p> ມີສານຕ້ານອະນຸມູນອິດສະລະສູງ  ໃນຜິວອັງລຸ່ນມີ resveratrol ຊ່ວຍຕ້ານຊິງ ແລະ ປ້ອງກັນມະເຮັງ
+
+                    ປ້ອງກັນໂຣກຫົວໃຈ  ຊ່ວຍລົດໄຂມັນເລວ ແລະ ຄວາມດັນໂລຫິດ
+                    
+                    ຊ່ວຍໃຫ້ຜິວພັນດີ ວິຕາມິນ C ແລະສານຕ້ານອະນຸມູນອິດສະລະຊ່ວຍໃຫ້ຜິວເປັນປະກາຍ
+                    
+                    ດີຕໍ່ດວງຕາ  ມີສານ lutein ແລະ zeaxanthin
+                    
+                    ຊ່ວຍໃນການຂັບຖ່າຍ ໃຍອາຫານຊ່ວຍປ້ອງກັນທ້ອງຜູກ. <br>
+                    ແຄລໍຣີ: ~69 kcal,
+
+                    ຄາບອຮອບ: ~18 ກຣາມ,
+                    
+                    ນໍ້າຕານ: ~16 ກຣາມ,
+                    
+                    ໃຍອາຫານ: ~0.9 ກຣາມ,
+                    
+                    ໂປຣຕີນ: ~0.7 ກຣາມ,
+                    
+                    ຟັດ: ~0.2 ກຣາມ,
+                    
+                    ວິຕາມິນ C: ~10.8 mg,
+                    
+                    ວິຕາມິນ K: ~14.6 µg, 
+                    
+                    ໂພແທສຊຽມ: ~191 mg.
+                    
+                     </p>    
+                   </div>
+               </div>
+              
+    </div>
+
+       <div  class="otherfruit"  data-aos="flip-right">      
+             
+        <a href="moreinfoaboutpage.html">  ໝາກໄມ້ອີກຊະນິດອື່ນໆ 🍉</a>
+          
+          </div>
+ 
+     </section>
+   
+     <section id="gallery">  
+      <header>
+        <div class="gallerytop">   
+
+          <h1>ທຸກທ່ານໃນໜ້ານີ້ຈະແມ່ນຜົນປະໂຫຍດຂອງ ນໍ້າໝາກໄມ້🍎  
+          <p>ໃນນີ້ມີຫຼາຍຮູບແບບ  ຈາກໝາກໄມ້ທີ່ກາຍມາເປັນ ນໍ້າໝາກໄມ້ 🍉 </p> 
+          <p>ວ່າລັກສະນະຂອງມັນເປັນແນວໃດ ແລະ ມີຜົນປະໂຫຍດແນວໃດ </p>    </h1>
+
+        </div>
+      </header>
+    
+      <main class="galler"  data-aos="zoom-in-right" >
+        <div class="image-box" >
+          <img src="photos/aj.png" alt="Fruit 1">
+        </div>
+        <div class="image-box"  >
+          <img src="photos/wj.png" alt="Fruit 2"> 
+        </div>
+        <div class="image-box">
+          <img src="photos/oj.png" alt="Fruit 1">
+        </div>
+        <div class="image-box"  >
+          <img src="photos/paj.png" alt="Fruit 2"> 
+        </div>
+        <div class="image-box" >
+          <img src="photos/dgj.png" alt="Fruit 3"> 
+        </div>
+      </main> 
+
+       <header>
+       <!-- Apple -->
+<div class="fruit-box set" data-aos="zoom-in-right">
+  <div class="text-content">
+    <h1>ນ້ຳແອັບເປິ້ນ</h1>
+    <p>
+      ນ້ຳແອັບເປິ້ນ ແມ່ນເຄື່ອງດື່ມຫວານ ແລະ ສົດຊື່ນ ທີ່ຜະລິດຈາກໝາກແອັບເປິ້ນ. ມັນມີ ວິຕາມິນ C, ວິຕາມິນ A, ແລະ ວິຕາມິນກຸ່ມ B ບາງຢ່າງ. ຊ່ວຍໃນການຮັກສານ້ຳໃນຮ່າງກາຍ ແລະ ເປັນແຫຼ່ງຂອງສານຕ້ານອັກເສບ, ແຕ່ມັກມີນ້ຳຕານສູງ ແລະ ບໍ່ມີໃຍອາຫານເທົ່າກັບການກິນໝາກແອັບເປິ້ນສົດ. ຄວນເກັບໄວ້ໃນຕູ້ເຢັນຫຼັງເປີດຝາ ແລະ ດື່ມໃຫ້ສົດໃຫມ່.
+      <br>   <strong>ຂໍ້ເສຍ:</strong> ມີນ້ຳຕານສູງ,   ຂາດໃຍອາຫານ, ອາດເຮັດໃຫ້ນ້ຳຕານໃນເລືອດພຸ່ງ ຖ້າດື່ມຫຼາຍ,  ບາງສູດອາດມີສານກັກກັນເນົ່າ ຫຼື ສານອາຫານເພີ່ມເຕີມ.
+    </p>
+
+  </div>
+  <div class="image-content">
+    <img src="photos/aj.png" alt="Apple" data-aos="zoom-in-left">
+  </div>
+</div>
+
+<!-- Banana -->
+<div class="fruit-box set1" data-aos="zoom-in-left">
+  <div class="image-content">
+    <img src="photos/bbj.png" alt="Banana" data-aos="zoom-in-right">
+  </div>
+  <div class="text-content">
+    <h1>ນ້ຳຫມາກກ້ວຍ</h1>
+    <p>ນ້ຳຫມາກກ້ວຍ ແມ່ນເຄື່ອງດື່ມທີ່ຂົມນິດໆ ແລະ ຫວານ ທີ່ເຮັດຈາກການປັ່ນຫມາກກ້ວຍ. ອຸດົມໄປດ້ວຍ ວິຕາມິນ B6, ວິຕາມິນ C, ໂພແທສຽມ ແລະ ໃຍອາຫານ. ຊ່ວຍໃຫ້ພະລັງງານໄວ ຊ່ວຍຍ່ອຍອາຫານ ແລະ ບຳລຸງຫົວໃຈ. ຄວນດື່ມໃນຂະນະທີ່ສົດ ແລະ ເຢັນໆ.
+   <br>   <strong>ຂໍ້ເສຍ:</strong> ມີນ້ຳຕານສູງ (ຖ້າກິນຫຼາຍ ອາດທໍາໃຫ້ນ້ຳຕານໃນເລືອດສູງ)
+
+      ອາດເຮັດໃຫ້ອືດທ້ອງ ຫຼື ທ້ອງຜູກ ຖ້າກິນເຂົ້າໄປຫຼາຍເກີນໄປ
+      
+      ບາງຄົນອາດມີອາການແພ້ຫມາກກ້ວຍ (ແຕ່ເປັນສ່ວນນ້ອຍ)
+      
+      ຖ້າກິນຫຼາຍກ່ອນນອນ ອາດຈະທໍາໃຫ້ທ້ອງອືດ ຫຼື ເກີດການຍ່ອຍຊ້າ.
+      
+      
+    </p>
+  </div>
+</div>
+
+<!-- Watermelon -->
+<div class="fruit-box set2" data-aos="zoom-in-right">
+  <div class="text-content">
+    <h1>ນໍ້າໝາກໂມ</h1>
+    <p>ນໍ້າຫມາກໂມເປັນເຄື່ອງດື່ມທີ່ສົດຊື່ນ ແລະ ຊ່ວຍໃນການຮັກສານ້ຳໃນຮ່າງກາຍ, ທີ່ຜະລິດຈາກຫມາກໂມສົດ. ມັນອຸດົມໄປດ້ວຍວິຕາມິນ C, A, ແລະໂພແທດຊຽມ. ມັນຊ່ວຍໃຫ້ທ່ານມີນ້ໍາ, ສະຫນັບສະຫນູນສຸຂະພາບຫົວໃຈ, ແລະມີແຄລໍລີ່ຕໍ່າ. ຄວນກິນໃນຂະນະທີ່ເຢັນດີທີ່ສຸດ. <br> 
+     <strong>ຂໍ້ເສຍ:</strong>ມີນ້ຳຕານສູງ
+
+     ມີໃຍອາຫານຕ່ຳ
+     
+     ອາດຈະໄວຕໍ່ການເນົ່າ ຫຼື ສົ້ມຖ້າບໍ່ເກັບໃນຕູ້ເຢັນ
+     
+     ສໍາລັບຄົນທີ່ເປັນໂລກເບາຫວານ ອາດຈະຕ້ອງຫຼີກລ້ຽງຫຼືຄວບຄຸມປະລິມານທີ່ດື່ມ
+    </p>
+  </div>
+  <div class="image-content">
+    <img src="photos/wj.png" alt="Watermelon" data-aos="zoom-in-left">
+  </div>
+</div>
+
+<!-- Orange -->
+<div class="fruit-box set3" data-aos="zoom-in-left">
+  <div class="image-content">
+    <img src="photos/oj.png" alt="Orange" data-aos="zoom-in-right">
+  </div>
+  <div class="text-content">
+    <h1>ນໍ້າໝາກກ້ຽງ</h1>
+    <p>ອຸດົມໄປດ້ວຍ ວິຕາມິນ C ຊ່ວຍເສີມລະບົບພູມຕ້ານ
+
+           ມີ ສານຕ້ານອະນຸມູນອິສະລະ ຊ່ວຍຕ້ານກັບພະຍາດ
+      
+                  ຊ່ວຍຮັກສາຜິວ ແລະ ຜະລິດຄອລາເຈນ
+      
+                      ເປັນເຄື່ອງດື່ມທີ່ສົດຊື່ນ ແລະ ຊ່ວຍເພີ່ມນ້ຳໃນຮ່າງກາຍ. <br>
+                              <strong>ຂໍ້ເສຍ:</strong> ມີນ້ຳຕານທຳມະຊາດສູງ ອາດເຮັດໃຫ້ນ້ຳຕານໃນເລືອດພຸ່ງ
+
+                                    ມີໃຍອາຫານໜ້ອຍກວ່າກິນສົ້ມທັງຜົນ
+     
+                                         ອາດທໍາລາຍແຂ້ວ ຫາກດື່ມບໍ່ຖືກວິທີ
+     
+                                            ບາງຊະນິດມີ ນ້ຳຕານເພີ່ມ ຫຼື ສານກັກກັນເນົ່າ. 
+     
+     
+
+    </p>
+  </div>
+</div>
+
+<!-- Dragon Fruit -->
+<div class="fruit-box set4" data-aos="zoom-in-right">
+     <div class="text-content">
+         <h1>ໝາກມັງກອນ</h1>
+           <p>ອຸດົມໄປດ້ວຍວິຕາມິນຊີ, ເສັ້ນໄຍ ແລະສານຕ້ານອະນຸມູນອິດສະລະ
+
+               ສະຫນັບສະຫນູນການຍ່ອຍອາຫານແລະເພີ່ມພູມຕ້ານທານ
+      
+                   ຊ່ວຍຮັກສາຜິວຫນັງທີ່ມີສຸຂະພາບດີແລະຫຼຸດຜ່ອນການອັກເສບ
+      
+                      ແຄລໍຣີຕໍ່າ ແລະໃຫ້ນໍ້າຕາມທໍາມະຊາດ. 
+                          <br>   <strong>ຂໍ້ເສຍ:</strong>  ສາມາດເຮັດໃຫ້ເກີດອາການຖອກທ້ອງໄດ້ຖ້າກິນໃນປະລິມານຫຼາຍ ບາງຄົນອາດຈະແພ້ໝາກມັງກອນ ນໍ້າສົດມີອາຍຸການເກັບຮັກສາສັ້ນ ແນວພັນສີແດງສາມາດເຮັດໃຫ້ເຄື່ອງນຸ່ງຫົ່ມຫຼືລີ້ນເປື້ອນ.
+       
+            </p>
+      </div>
+  <div class="image-content">
+    <img src="photos/dgj.png" alt="Dragon Fruit" data-aos="zoom-in-left">
+  </div>
+</div>
+
+<!-- Pineapple -->
+<div class="fruit-box set1" data-aos="zoom-in-left">
+  <div class="image-content">
+    <img src="photos/paj.png" alt="Pineapple" data-aos="zoom-in-right">
+  </div>
+  <div class="text-content">
+            <h1>ນໍ້າໝາກນັດ</h1>
+                <p>ອຸດົມໄປດ້ວຍ ວິຕາມິນ C ແລະ ແມງແກນີສ(manganese) ຊ່ວຍເສີມພູມຕ້ານ ແລະ ລະບົບເຜົາໄໝ
+
+                         ມີເອນໄຊມ໌ທີ່ຊື່ວ່າ bromelain ຊ່ວຍຍ່ອຍອາຫານ ແລະ ລົດອາການອັກເສບ
+      
+                                ມີລົດຊາດຫວານທຳມະຊາດ ແລະ ສົດຊື່ນ
+      
+                                       ຊ່ວຍຮັກສາຜິວ ແລະ ຟື້ນຟູຮ່າງກາຍຫຼັງອອກກໍາລັງກາຍ. <br> 
+                                              <strong>ຂໍ້ເສຍ:</strong>າມາດເປັນກົດເກີນໄປສໍາລັບຜູ້ທີ່ມີກະເພາະອາຫານທີ່ລະອຽດອ່ອນຫຼືກົດໄຫຼຄືນ
+
+                                                         ອາດຈະເຮັດໃຫ້ເກີດການລະຄາຍເຄືອງໃນປາກຖ້າກິນຫຼາຍເກີນໄປ (ເນື່ອງຈາກ bromelain)
+                           
+                                                                   ນໍ້າຕານ ທຳມະຊາດສູງ
+                           
+                                                                      ບາງລຸ້ນທີ່ບັນຈຸອາດມີນໍ້າຕານ ຫຼື ສານກັນບູດເພີ່ມ.
+      
+                </p>
+  </div>
+</div>
+  
+  </header>
+ 
+  <main class="galle" data-aos="zoom-in-down"> 
+    <div class="card1"  data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                         data-aos-duration="2000"> 
+
+      <img src="photos/sj.png" alt="ນໍ້າໝາກສະຕໍບູລີ່" class="hii" data-aos="zoom-in-down">  
+      <div class="caption"><h1>ນໍ້າໝາກສະຕໍເບີຣີ</h1> - ອຸດົມໄປດ້ວຍວິຕາມິນຊີ, ສານຕ້ານອະນຸມູນອິດສະລະ, ແລະໂຟເລດ ດີຕໍ່ສຸຂະພາບຜິວໜັງ ແລະລະບົບພູມຄຸ້ມກັນ   ອາດຈະຊ່ວຍຫຼຸດຄວາມດັນເລືອດແລະຫຼຸດຜ່ອນການອັກເສບ  ຫວານແລະສົດຊື່ນຕາມທໍາມະຊາດ. <br>
+             <strong>ຂໍ້ເສຍ:</strong>ສາມາດເຮັດໃຫ້ແພ້ ສໍາລັບຄົນທີ່ມີພະວະແພ້ມີນ້ຳຕານສູງ  ຫມາກເບີຣີສົດເນົ່າໄວ ຫາກບໍ່ເກັບໃນຕູ້ເຢັນ. 
+      </div>
+
+    </div>
+
+    <div class="card1"  class="colorrunofborde2" data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                         data-aos-duration="2000">
+      <img src="photos/mj.png" alt="ນໍ້າໝາກມ່ວງ" data-aos="zoom-in-down" >
+             <div class="caption"><h1>ນໍ້າໝາກມ່ວງ</h1>  -ອຸດົມໄປດ້ວຍ ວິຕາມິນ A, ວິຕາມິນ C ແລະ ສານຕ້ານອະນຸມູນອິສະລະ
+
+                                          ດີຕໍ່ສາຍຕາ, ຜິວ ແລະ ລະບົບພູມຕ້ານ
+              
+                                              ຊ່ວຍຍ່ອຍອາຫານ ເນື່ອງຈາກມີເອນໄຊມ໌ amylase
+              
+                                                   ມີພະລັງງານ ແລະ ຫວານທຳມະຊາດ.<br>
+                                            <strong>ຂໍ້ເສຍ:</strong> ມີນໍ້າຕານທຳມະຊາດ ແລະແຄລໍຣີສູງ
+
+                                                          ອາດຈະເຮັດໃຫ້ເກີດຄວາມເປັນກົດຫຼືຄວາມຮ້ອນໃນຮ່າງກາຍຖ້າບໍລິໂພກຫຼາຍເກີນໄປ
+                                            
+                                                             ນ້ຳໝາກມ່ວງບາງຫໍ່ໄດ້ເພີ່ມນ້ຳຕານ ຫຼືສານກັນບູດ
+                                            
+                                                                ບໍ່ເຫມາະສົມສໍາລັບຜູ້ທີ່ເປັນໂລກເບົາຫວານຄວນລະວັງ.
+                                              
+                                              
+              </div>
+    </div>
+    <div class="card1"  class="colorrunofborde2" data-aos="flip-left"
+                       data-aos-easing="ease-out-cubic"
+                      data-aos-duration="2000">
+      <img src="photos/cj.png" alt="ໝາກໂປມ" data-aos="zoom-in-down" class="hi2" >
+          <div class="caption"><h1>ນໍ້າໝາກພ້າວ</h1> -ຄື່ອງດື່ມທີ່ມີຄວາມຊຸ່ມຊື່ນທີ່ດີເລີດດ້ວຍ ມີສານໄຟຟ້າທຳມະຊາດ (ເຊັ່ນ:ໂພແທດຊຽມ ແລະ ແມກນີຊຽມ)
+
+                                         ແຄລໍຣີຕໍ່າ ແລະ ບໍ່ມີໄຂມັນ
+            
+                                               ສະຫນັບສະຫນູນສຸຂະພາບຫົວໃຈແລະການເຮັດວຽກຂອງຫມາກໄຂ່ຫຼັງ
+            
+                                                  ອາດຈະຊ່ວຍໃນການຍ່ອຍອາຫານແລະການຟື້ນຟູກ້າມຊີ້ນ. <br>
+
+                                        <strong>ຂໍ້ເສຍ:</strong>  ການດື່ມຫຼາຍເກີນໄປອາດເຮັດໃຫ້ເກີດຄວາມບໍ່ສົມດຸນຂອງສານໄຟຟ້າທຳມະຊາດ,
+
+                                                                        ອາດຈະມີນໍ້າຕານທໍາມະຊາດ, ສະນັ້ນບໍ່ເຫມາະສົມຫຼາຍສໍາລັບຜູ້ເປັນໂລກເບົາຫວານ
+                                        
+                                                                            ສະບັບຫຸ້ມຫໍ່ອາດຈະເພີ່ມນໍ້າຕານ ຫຼື ສານກັນບູດ. 
+
+               </div>
+    </div>
+    <div class="card1"  class="colorrunofborde2" data-aos="flip-left"
+                         data-aos-easing="ease-out-cubic"
+                         data-aos-duration="2000">
+      <img src="photos/tj.png" alt="ໝາກໂປມ" data-aos="zoom-in-down" class="hi" >
+          <div class="caption"><h1>ນໍ້າໝາກຖົ່ວລຽນ (ທຸລຽນ) </h1> -ອຸດົມໄປດ້ວຍ ວິຕາມິນ C, ໂພແທສຽມ, ແລະ ໄຂມັນດີ
+
+                         ໃຫ້ພະລັງງານ ແລະ ຊ່ວຍສ້າງພູມຕ້ານທານ
+        
+                             ມີສານຕ້ານອະນຸມູນອິສະລະ ຊ່ວຍຫຼຸດອາການອັກເສບ
+        
+                                    ດີຕໍ່ລະບົບຍ່ອຍອາຫານ ເນື່ອງຈາກມີໃຍອາຫານ . <br>
+                          <strong>ຂໍ້ເສຍ:</strong> ມີແຄລໍຣີສູງແລະນໍ້າຕານທຳມະຊາດ
+
+                                                          ກິ່ນຫອມແຮງ - ຫຼາຍຄົນບໍ່ມັກ,
+                          
+                                                                  ສາມາດເຮັດໃຫ້ທ້ອງອືດ ຫຼື ບໍ່ສະບາຍ ຖ້າກິນຫຼາຍເກີນໄປ
+                          
+                                                                      ບໍ່ເຫມາະສົມສໍາລັບຜູ້ທີ່ມີຄວາມດັນເລືອດສູງ ຫຼື ພະຍາດເບົາຫວານໃນປະລິມານຫຼາຍ.
+       
+          </div> 
+     </div>
+  </main>
+
+  <main class="gall" data-aos="zoom-in-down"> 
+    <div class="card2"   data-aos="flip-left"
+                         data-aos-easing="ease-out-cubic"
+                             data-aos-duration="2000"> 
+      <img src="photos/avj.png" alt="ນໍ້າໝາກສະຕໍບູລີ່" class="hi3" data-aos="zoom-in-down">  
+      <div class="captio"> <h1>ນໍ້າໝາກອາໂວກາໂດ</h1> - ອຸດົມໄປດ້ວຍ ໄຂມັນດີ (omega-3), ວິຕາມິນ E, ວິຕາມິນ C ແລະ ໂພແທສຽມ  ດີຕໍ່ສຸຂະພາບຫົວໃຈ, ຜິວ ແລະ ການເຮັດວຽກຂອງສະມອງ   ມີໃຍອາຫານ ຊ່ວຍການຍ່ອຍ   ນ້ຳມີຄວາມເນື້ອຂົມນິດໆມັນໆ ແລະ ຊ່ວຍໃຫ້ອິ່ມນານ. <br> 
+                               <strong>ຂໍ້ເສຍ:</strong>  ມີແຄລໍລີ່ສູງ - ສາມາດນໍາໄປສູ່ການເພີ່ມນໍ້າຫນັກຖ້າກິນຫຼາຍເກີນໄປ
+                                                              ບາງຄົນອາດຈະແພ້ອາໂວກາໂດ
+                                                                 ບໍ່ເຫມາະສົມສໍາລັບຄົນທີ່ກຳລັງຄວບຄຸມໄຂມັນ. 
+
+         </div>
+    </div>
+     <div class="card2"   data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                data-aos-duration="2000">
+      <img src="photos/gj.png" alt="ນໍ້າໝາກມ່ວງ" data-aos="zoom-in-down" class="hi4" >
+          <div class="captio"><h1>ນ້ຳໝາກອະງຸ່ນ</h1> -ອຸດົມໄປດ້ວຍວິຕາມິນ C, ວິຕາມິນ K ແລະສານຕ້ານອະນຸມູນອິດສະລະ
+
+                                ສະຫນັບສະຫນູນສຸຂະພາບຫົວໃຈແລະອາດຈະຊ່ວຍຫຼຸດຄວາມດັນເລືອດ
+        
+                                     ບັນຈຸ ສານທຳມະຊາດ, ເຊິ່ງອາດຈະປ້ອງກັນການແກ່ອາຍຸແລະພະຍາດ
+        
+                                               ດີສໍາລັບຜິວຫນັງແລະລະບົບພູມຕ້ານທານ. <br> 
+                                            <strong>ຂໍ້ເສຍ:</strong>  ມີນ້ຳຕານທຳມະຊາດສູງ ບໍ່ແນະນໍາໃຫ້ຄົນເປັນເບາຫວານດື່ມຫຼາຍ
+
+                                                                         ອາດມີຜົນກະທົບທີ່ສູງ ແລະ ສົ່ງຜົນຕໍ່ແຂ້ວ
+                                            
+                                                                            ນ້ຳອະງຸ່ນສໍາເລັດອາດມີ ນ້ຳຕານເພີ່ມ
+                                            
+                                                                              ກິນຫຼາຍເກີນອາດເຮັດໃຫ້ລະບົບຍ່ອຍບໍ່ສະບາຍ. 
+         </div>
+    </div>
+       <div class="card2"   data-aos="flip-left"
+                           data-aos-easing="ease-out-cubic"
+                             data-aos-duration="2000">
+      <img src="photos/fj.png" alt="ໝາກໂປມ" data-aos="zoom-in-down" class="hi6" >
+                <div class="captio"><h1>ນໍ້າໝາກ Fig</h1> - ອຸດົມໄປດ້ວຍ ໃຍອາຫານ ຊ່ວຍການຍ່ອຍ ແລະ ປ້ອງກັນທ້ອງຜູກ
+
+                                                  ມີ ແຄລເຊຍມ, ໂພແທສຽມ, ແລະ ແມກນີເຊຍມ  ດີຕໍ່ກະດູກ ແລະ ຫົວໃຈ
+        
+                                                       ມີ ສານຕ້ານອະນຸມູນອິສະລະ ທີ່ຊ່ວຍປ້ອງກັນເຊວລ໌
+        
+                                                          ຫວານຈາກທຳມະຊາດ ໂດຍບໍ່ຕ້ອງເພີ່ມນ້ຳຕານ. <br> 
+                                          <strong>ຂໍ້ເສຍ:</strong>  ກິນຫຼາຍເກີນ ອາດເຮັດໃຫ້ຖອກທ້ອງ
+
+                                                              ນ້ຳຕານທຳມະຊາດສູງ  ບໍ່ແນະນຳໃຫ້ຄົນເປັນເບາຫວານ
+                                          
+                                                                       ຫາຢາກ ໃນບາງຕະຫຼາດ ຫຼື ເປັນຫມາກທີ່ບໍ່ນິຍົມ
+                                          
+                                                                                ອາດຮ່ວມປະຕິກິລິຍາກັບຢາຄວາມດັນເລືອດ. 
+
+
+                </div> 
+      </div>
+    <div class="card2"   data-aos="flip-left"
+                          data-aos-easing="ease-out-cubic"
+                           data-aos-duration="2000">
+      <img src="photos/rj.png" alt="ໝາກໂປມ" data-aos="zoom-in-down" class="hi5" >
+      <div class="captio"><h1>ນໍ້າໝາກເງາະ</h1> - ວິຕາມິນ C ສູງ - ເສີມສ້າງລະບົບພູມຕ້ານທານ
+
+                                    ປະກອບດ້ວຍທາດເຫຼັກ, ດີສໍາລັບເມັດເລືອດແດງ
+        
+                                          ອຸດົມໄປດ້ວຍສານຕ້ານອະນຸມູນອິດສະລະ 
+        
+                                               ສົດຊື່ນ ແລະ ຫວານຕາມທຳມະຊາດ. <br> 
+                                               <strong>ຂໍ້ເສຍ:</strong> ອາດຈະເຮັດໃຫ້ນໍ້າຕານໃນເລືອດສູງຂື້ນ ຖ້າກິນຫຼາຍເກີນໄປ
+
+                                                                       ບໍ່ມີຢູ່ສະເໝີໃນບາງບ່ອນ
+                                               
+                                                                           ບາງ​ຄົນ​ອາດ​ຈະ​ເກີດ​ອາການ​ແພ້​ກັບ​ມັນ. 
+                                               
+      
+        </div>
+
+        </div>
+        
+  </main>
+
+
+
+  <main class="gal" data-aos="zoom-in-down">
+    <div class="card3"  data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                             data-aos-duration="2000"> 
+      <img src="photos/pj.png" alt="ນໍ້າໝາກສະຕໍບູລີ່" class="hi5" data-aos="zoom-in-down">  
+      <div class="capti"><h1>ນໍ້າໝາກມັງຄຸດ</h1>- ອຸດົມໄປດ້ວຍວິຕາມິນຊີ - ເສີມສ້າງລະບົບພູມຄຸ້ມກັນ
+
+             ປະກອບດ້ວຍ xanthones  ສານຕ້ານອະນຸມູນອິດສະລະທີ່ມີອໍານາດທີ່ອາດຈະຫຼຸດຜ່ອນການອັກເສບແລະຊະລໍຄວາມແກ່
+        
+                    ສະຫນັບສະຫນູນສຸຂະພາບຜິວຫນັງ ແລະ ອາດຈະປັບປຸງການເຮັດວຽກຂອງຫົວໃຈ
+         
+                           ອາດຊ່ວຍໃນການຍ່ອຍອາຫານ ແລະ ຊ່ວຍຂັບລ້າງສານພິດອອກຈາກຮ່າງກາຍ. <br>
+                                  <strong>ຂໍ້ເສຍ:</strong> ມີລາຄາແພງ ແລະ ບໍ່ສາມາດໃຊ້ໄດ້ຢູ່ທົ່ວທຸກແຫ່ງ
+
+                                                     ດື່ມຫຼາຍອາດຈະເຮັດໃຫ້ອາຈົມວ່າງ
+        
+                                                                   ບາງຜະລິດຕະພັນມີນໍ້າຕານເພີ່ມ. 
+      
+                                                                         </div>
+                                                                                 </div>
+    <div class="card3"  data-aos="flip-left"
+                               data-aos-easing="ease-out-cubic"
+                                 data-aos-duration="2000">
+        <img src="photos/lj.png" alt="ນໍ້າໝາກມ່ວງ" data-aos="zoom-in-down" class="hi6">
+                      <div class="capti">ໝາກອົ້ມ - ອຸດົມໄປດ້ວຍວິຕາມິນຊີ  ຊ່ວຍເສີມສ້າງລະບົບພູມຄຸ້ມກັນ
+
+                                  ມີສານຕ້ານອະນຸມູນອິດສະລະ  ອາດຊ່ວຍຫຼຸດຄວາມຄຽດ ແລະ ຊະລໍຄວາມແກ່
+        
+                                       ເປັນທີ່ຮູ້ຈັກສໍາລັບການສົ່ງເສີມການນອນທີ່ດີກວ່າແລະການຜ່ອນຄາຍ
+         
+                                           ອາດຈະປັບປຸງການໄຫຼວຽນຂອງເລືອດແລະລະດັບພະລັງງານ,
+         
+                                                 ຫວານ ແລະ ສົດຊື່ນຕາມທໍາມະຊາດ. <br> 
+                                                     <strong>ຂໍ້ເສຍ:</strong>   ນໍ້າຕານທຳມະຊາດສູງ - ອາດຈະບໍ່ດີ ສຳລັບ ຜູ້ເປັນໂລກເບົາຫວານ
+
+                                                                   ການດື່ມຫຼາຍເກີນໄປອາດເຮັດໃຫ້ເກີດຄວາມຮ້ອນ ຫຼື ຄໍແຫ້ງໃນບາງຄົນ
+                                                  
+                                                                           ບາງຜະລິດຕະພັນທາງການຄ້າມີສານກັນບູດ ຫຼື ເພີ່ມນໍ້າຕານ
+                                                  
+                                                                                 ບໍ່ໄດ້ຄົ້ນຄ້ວາຢ່າງກວ້າງຂວາງເທົ່າກັບນໍ້າຫມາກໄມ້ອື່ນໆ. 
+
+                                                                                     </div>
+                                                                                           </div>
+    <div class="card3"  data-aos="flip-left"
+                                  data-aos-easing="ease-out-cubic"
+                                    data-aos-duration="2000">
+      <img src="photos/rpj.png" alt="ໝາກໂປມ" data-aos="zoom-in-down" class="hi7">
+      <div class="capti"><h1>ນໍ້າໝາກສົມພູ່</h1>- ວິຕາມິນ C ສູງ - ເສີມສ້າງລະບົບພູມຕ້ານທານ
+
+                                       ປະກອບດ້ວຍເສັ້ນໄຍ  ສະຫນັບສະຫນູນການຍ່ອຍອາຫານທີ່ມີສຸຂະພາບດີ
+        
+                                                ແຄລໍຣີຕໍ່າ ແລະສາມາດຊ່ວຍຄວບຄຸມນ້ຳໜັກໄດ້
+        
+                                                      ຊ່ວຍເຮັດໃຫ້ຮ່າງກາຍເຢັນລົງ ແລະ ຮັກສາຄວາມຊຸ່ມຊື່ນ
+        
+                                                            ອາດຈະສະຫນັບສະຫນູນສຸຂະພາບຂອງຫມາກໄຂ່ຫຼັ ງແລະ ຫຼຸດຜ່ອນສານພິດ. <br>  
+                                                               <strong>ຂໍ້ເສຍ:</strong> ລົດອາດຈະຈືດ ຫຼື ບໍ່ແຮງເທົ່ານ້ຳໝາກໄມ້ອື່ນ ບໍ່ມີຂາຍຢ່າງກວ້າງຂວາງໃນຮ້ານຄ້າຫຼືຕະຫຼາດ ນໍ້າໝາກໄມ້ທາງການຄ້າບາງຊະນິດອາດມີສານເສີມ ຫຼື ສານຫວານ ບາງຄົນອາດຈະແພ້ ຫຼື ມີປະຕິກິລິຍາທາງຜິວຫຼືລຳໄສ. 
+
+      </div>
+    </div>
+    <div class="card3"  data-aos="flip-left"
+                         data-aos-easing="ease-out-cubic"
+                            data-aos-duration="2000">
+      <img src="photos/jl.png" alt="ໝາກໂປມ" data-aos="zoom-in-down">
+      <div class="capti"><h1>ນໍ້າໝາກມີ່</h1> - ມີວິຕາມິນ C ແລະ A ສູງ  ຊ່ວຍເສີມສ້າງພູມຄຸ້ມກັນ ແລະ ສຸຂະພາບຕາ
+
+                                     ແຫຼ່ງໂພແທດຊຽມທີ່ດີ  ອາດຊ່ວຍຫຼຸດຄວາມດັນເລືອດໄດ້
+        
+                                             ອຸດົມໄປດ້ວຍເສັ້ນໄຍ  ຊ່ວຍໃນການຍ່ອຍອາຫານ ແລະປ້ອງກັນການທ້ອງຜູກ
+        
+                                               ອາດຈະຊ່ວຍເພີ່ມພະລັງງານເນື່ອງຈາກນ້ໍາຕານທໍາມະຊາດ
+        
+                                                    ປະກອບດ້ວຍສານຕ້ານອະນຸມູນອິດສະລະທີ່ອາດຈະປ້ອງກັນຄວາມເສຍຫາຍຂອງຮ່າງກາຍ. <br> 
+                                              <strong>ຂໍ້ເສຍ:</strong>   ນໍ້າຕານ ທຳມະຊາດສູງ - ອາດຈະບໍ່ ເໝາະສົມກັບພະຍາດເບົາຫວານ
+
+                                                                          ຫຼື ຫວານເກີນໄປສຳລັບບາງຄົນ
+                                              
+                                                                                   ອາດຈະເຮັດໃຫ້ທ້ອງອືດ ຫຼື ອາຍແກັສກະເພາະອາຫານໃນບາງຄົນ
+                                              
+                                                                                      ຍາກທີ່ຈະຫາໃນຮູບແບບນ້ຳຍາກ  ສ່ວນໃຫ່ຍຕ້ອງປັ່ນເອງຈາກໝາກສົດ. 
+
+
+      </div>
+    </div>
+  </main>
+
+  <main class="ga" data-aos="zoom-in-down">
+    <div class="card4"  data-aos="flip-left"
+                               data-aos-easing="ease-out-cubic"
+                                      data-aos-duration="2000"> 
+      <img src="photos/orj.png" alt="ນໍ້າໝາກສະຕໍບູລີ່" class="hi" data-aos="zoom-in-down">  
+      <div class="capt">ໝາກກ້ວຍ - ມີໂພທາສ້ອນ ດີຕໍ່ລຳໄສ້ so, sorry for some information and the improitan i have  that's why i would like to say sorry for everybody here thanks for wacthing</div>
+    </div>
+    <div class="card4"   data-aos="flip-left"
+                             data-aos-easing="ease-out-cubic"
+                                data-aos-duration="2000">
+      <img src="photos/lj.png" alt="ນໍ້າໝາກມ່ວງ" data-aos="zoom-in-down">
+      <div class="capt">ໝາກອົ້ມ - ອຸດົມໄປດ້ວຍວິຕາມິນ C</div>
+    </div>
+    <div class="card4"   data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                              data-aos-duration="2000">
+      <img src="photos/poj.png" alt="ໝາກໂປມ" data-aos="zoom-in-down">
+      <div class="capt">ໝາກໂປມ -ອຸດົມໄປດ້ວຍສານຕ້ານອະນຸມູນອິສະລະ  ຊ່ວຍຕ້ານອັກເສບ ແລະ ປ້ອງກັນຄວາມເສຍຫາຍໃນຮ່າງກາຍ
+                                        ຊ່ວຍຫຼຸດຄວາມດັນເລືອດ ແລະ ສົມດຸນການເຮັດວຽກຂອງຫົວໃຈ
+                                                 ມີວິຕາມິນ C  ສ້າງພູມຕ້ານທານ
+                                                  ດີຕໍ່ຜິວໜັງ ແລະອາດຊ່ວຍຊະລໍຄວາມແກ່
+                                                      ອາດຈະຊ່ວຍການຍ່ອຍອາຫານ ແລະ ຫຼຸດຜ່ອນອາການຂອງໂລກການອັກເສບ <br> 
+                                                       <strong>ຂໍ້ເສຍ:</strong> ສາມາດມີນ້ໍາຕານທໍາມະຊາດສູງ 
+                                                                   ອາດຈະພົວພັນກັບຢາບາງຊະນິດ,  
+                                                                       ຜະລິດຕະພັນບາງຢ່າງໄດ້ເພີ່ມນໍ້າຕານ ຫຼື ສານກັນບູດ
+                                                                           ການບໍລິໂພກຫຼາຍເກີນໄປອາດຈະເຮັດໃຫ້ເກີດຄວາມບໍ່ສະບາຍໃຫ້ກັບກະເພາະອາຫານ. 
+         
+        
+        
+        
+        
+        
+        
+                                                             </div>
+                                                             </div>
+   
+  </main>
+
+
+     </section>
+   
+     <section id="vony">
+      <header>   
+        <div class="vonytop">  
+
+          <h1>ໜ້ານີ້ຈະເວົ້າເຖິງ ຊະນິດຂອງຕົ້ນໄມ້ 🌳</h1> 
+          <p>ວ່າເປັນແນວໃດແດ່ ເພາະວ່າໂດຍສ່ວນຫຼາຍແລ້ວທຸກທ່ານອາດເຫັນແຕ່ໝາກ.</p>
+          <p>ໂດຍ ທີ່ອາດຍັງບໍ່ເຫັນຕົ້ນ ສະນັ້ນພວກເຮົາຈຶ່ງຢາກເອົາມາແນະນຳໃຫ້ໄດ້ເບີ່ງໄດ້ເຫັນນຳກັນ .</p> 
+
+        </div> 
+
+      </header>
+      <main>
+        <table border="2"> 
+
+          <tr class="appletree" data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom">
+            <th>
+
+      
+                    <img src="photos/at.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                       <img src="photos/taa.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                          <img src="photos/taaa.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                     </th>
+                       <td class="td">&nbsp;</td>
+                 <th>
+                         <h1 class="textvony" >ຕົ້ນໝາກເອັມເປີ້ນ</h1>
+                              <p class="textvony" > ຕົ້ນຫມາກໂປມທີ່ເຕີບໃຫຍ່ເຕັມທີ່ມັກຈະມີຄວາມສູງ 4 ຫາ 10 ແມັດ (13 ຫາ 33 ຟຸດ), ຂຶ້ນກັບປະເພດ.
+
+                                       ລຳຕົ້ນ: ມີລຳຕົ້ນໜາ, ສີນ້ຳຕານ, ແລະ 
+                    
+                                                ກິ່ງງ່າແຜ່ຫຼາຍ ຊຶ່ງມັກເປັນມົງກຸດມົນ ຫຼື ຮູບໄຂ່.
+                    
+                                                         ໃບ : ໃບມີສີຂຽວ, ຮູບໄຂ່, ມີແຂ້ວນ້ອຍໆອ້ອມຮອບແຄມ. ໃນລະດູໃບໄມ້ປົ່ງ, ໃບປ່ຽນເປັນສີເຫຼືອງຫຼືສີແດງກ່ອນທີ່ຈະຫຼຸດລົງ.
+                    
+                                                              ດອກໄມ້: ໃນພາກຮຽນ spring, ຕົ້ນຫມາກໂປມຈະອອກດອກສີຂາວຫຼືສີບົວທີ່ສວຍງາມ. ເຫຼົ່ານີ້ແມ່ນມີກິ່ນຫອມແລະດຶງດູດເຜິ້ງ.
+                    
+                                                                    ໝາກ: ຕົ້ນໄມ້ຈະເລີນເຕີບໂຕ ໝາກແອັບເປີ້ນ, ເຊິ່ງມີຮູບຊົງກົມ ແລະ ມີສີສັນແຕກຕ່າງກັນ - ສີແດງ, ສີຂຽວ, ຫຼືສີເຫຼືອງ, ຂຶ້ນກັບແນວພັນ.
+                    
+                                                                                    ໃນໂລກມີຕົ້ນແອບເປີ້ນຫຼາຍກວ່າ 7,500 ຊະນິດ. 
+                    
+                                                                                       ຕົ້ນໄມ້ແອບເປີ້ນສາມາດຢູ່ໄດ້ 50 ຫາ 80 ປີຫຼືຫຼາຍກວ່ານັ້ນຖ້າເບິ່ງແຍງດີ.
+
+                                                                                      </p>
+
+                                                                            </th>
+          </tr> 
+          
+          <tr class="appletre1"data-aos="fade-up-left">
+            <th>
+
+      
+                  <img src="photos/ot.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/o2t.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/ot3.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກກ້ຽງ</h1>
+                   <p class="textvony" >
+                            ຕົ້ນໄມ້ສີສົ້ມມີຂະຫນາດກາງ. ສ່ວນຫຼາຍຈະເລີນເຕີບໂຕສູງເຖິງ 4-10 ແມັດ (13-33 ຟຸດ), ຂຶ້ນກັບແນວພັນແລະການດູແລ.
+
+                                      ໃບ:
+                                         ໃບມີສີຂຽວເຂັ້ມ, ຮູບໄຂ່, ແລະເຫຼື້ອມ, ມີປາຍແຫຼມເລັກນ້ອຍ. ພວກມັນຂຽວຕະຫຼອດປີ (ຂຽວຕະຫຼອດປີ).
+
+                                                       ດອກ:
+                                                          ຕົ້ນໄມ້ສີສົ້ມຜະລິດດອກສີຂາວຂະຫນາດນ້ອຍທີ່ເອີ້ນວ່າດອກສີສົ້ມ. ເຫຼົ່ານີ້ແມ່ນມີກິ່ນຫອມແລະມັກຈະເບີກບານໃນພາກຮຽນ spring.
+                                   
+                                                         ໝາກໄມ້:
+                                                               ໝາກກົມ, ມີສີສົ້ມ, ເຕີບໃຫຍ່ຢູ່ຕາມງ່າ. ປົກກະຕິແລ້ວພວກມັນມີຜິວໜັງລຽບ, ມີຈຸດດ່າງດຳ ແລະ ປະກົດເປັນກຸ່ມ.
+          
+                                                                               ສາຂາ ແລະ ເປືອກ:
+                                                                               ມີອາຍຸສະເລ່ຍ 50-60 ປິ, ມີ400+ ສາຍພັນ,  
+                                                                        ກິ່ງງ່າມີເນື້ອແຂງ, ມີໜາມນ້ອຍໆ. ເປືອກມີສີນ້ຳຕານແກມສີຂີ້ເຖົ່າ.
+
+                                                                   </p>
+
+            </th>
+          </tr>
+          <tr class="appletre2"data-aos="fade-up-right">
+            <th>
+
+      
+                  <img src="photos/dt1.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/dt2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/dt3.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກມັງກອນ</h1>
+                    <p class="textvony" >ເໝາກມັງກອນ:
+                       🌵 ປະເພດ: ເປັນຕົ້ນກະບອງ, ບໍ່ແມ່ນຕົ້ນໄມ້.
+                    
+                          🌿 ລຳ: ຍາວ, ໜາ, ແລະ ສີຂຽວ ມີສາມດ້ານ (ຮູບສາມລ່ຽມ)
+                    
+                            ລຳຕົ້ນມີໜາມ ຫຼື ໜາມນ້ອຍໆ
+                    
+                                 ພວກມັນເຕີບໃຫຍ່ຂຶ້ນ, 
+                    
+                                   🌸 ດອກໄມ້ : ດອກສີຂາວຂະຫນາດໃຫຍ່ຫຼາຍ, ຍັງເອີ້ນວ່າ "ດອກຈັນ" ຫຼື " ລາຊິນີຂອງກາງຄືນ" 
+                    
+                                       ພວກມັນເບີກບານໃນຕອນກາງຄືນ ແລະ ມີກິ່ນຫອມຫຼາຍ
+                    
+                                            ໝາກ: ໝາກມັງກອນຈະເລີນເຕີບໂຕຢູ່ແຄມຂອງລຳ  ຕົ້ນດຣາກ້ອນສາມາດມີອາຍຸໄດ້ປະມານ 15 ຫາ 20 ປີ ຖ້າຖືກດູແລດີ ດຣາກ້ອນມີປະມານ 5 ຫາ 6 ສາຍພັນ. 
+                  </p>
+
+            </th>
+          </tr>
+          <tr class="appletre3"  data-aos="fade-right"> 
+            <th>
+
+      
+                  <img src="photos/pat.jpg" alt="apple tree" height="200px " width="200px" class="at"> 
+                  <img src="photos/pat1.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/pat2.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກນັດ</h1>
+                   <p class="textvony" > ຕົ້ນໝາກນັດບໍ່ແມ່ນຕົ້ນໄມ້ - ຕົວຈິງແລ້ວມັນເປັນຕົ້ນໄມ້ສັ້ນ, ຄ້າຍຄືພຸ່ມໄມ້ທີ່ມີໃບຍາວ, ແຂງ, ແລະແຫຼມ.
+
+                                             ມັນຈະເລີນເຕີບໂຕຢູ່ໃກ້ກັບພື້ນດິນ, ປົກກະຕິແລ້ວສູງປະມານ 3 ຫາ 5 ຟຸດ (1 ຫາ 1.5 ແມັດ).
+                    
+                                                 ໝາກ (ໝາກນັດ) ເຕີບໃຫຍ່ຢູ່ໃຈກາງ, ຢູ່ເທິງສຸດຂອງລຳຕົ້ນໜາ.
+                    
+                                                   🌿
+                                                    ໃບ: ຍາວ, ແຫຼມ, ແລະມັກມີກະດູກສັນຫຼັງນ້ອຍໆ.
+                    
+                                                      ໝາກ: ຈະເລີນເຕີບໂຕຈາກສູນກາງຂອງພືດ, ບໍ່ແມ່ນຈາກງ່າ.
+                    
+                                                         ຮາກ: ຮາກຕື້ນທີ່ແຜ່ລາມໄປໃກ້ກັບພື້ນຜິວ.
+                    
+                                                            ໄລຍະເວລາປູກ: ໃຊ້ເວລາປະມານ 18 ຫາ 24 ເດືອນຈຶ່ງຈະອອກໝາກ 1 ໜ່ວຍ  ມີອາຍຸໂດຍສະເລ່ຍ 3 ຫາ 5 ປີ, ມີຫຼາຍກວ່າ 37 ຊະນິດທີ່ຮູ້ຈັກ.</p>
+
+            </th>
+          </tr>
+          <tr class="appletre4"   data-aos="fade-left">   
+            <th>
+
+      
+                  <img src="photos/mt.webp" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/mt1.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/mt2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກມ່ວງ</h1>
+                   <p class="textvony" >ຂະໜາດ:
+
+                                       ຕົ້ນຫມາກມ່ວງທີ່ແກ່ແລ້ວສາມາດເຕີບໃຫຍ່ໄດ້ສູງເຖິງ 30-40 ຟຸດ (ປະມານ 9-12 ແມັດ), ເຖິງແມ່ນວ່າບາງແນວພັນສາມາດສູງເຖິງ 100 ຟຸດ (30 ແມັດ).
+                     
+                                          ຕົ້ນໄມ້ມັກຈະມີເຮືອນຍອດກວ້າງ, ດົກໜາ, ເຮັດໃຫ້ມັນເປັນຮູບກົມ.
+                    
+                                           ໃບ:
+                    
+                                               ຕົ້ນໝາກມ່ວງມີໃບຍາວ, ແຄບ, ແລະໃບສີຂຽວເຫຼື້ອມເປັນເງົາ.
+                    
+                                                   ໃບມີຄວາມຍາວປະມານ 8 ຫາ 16 ນິ້ວ ແລະສາມາດປ່ຽນສີໄດ້ເມື່ອເກີດໃໝ່ (ເລີ່ມເປັນສີແດງ, ຈາກນັ້ນປ່ຽນເປັນສີຂຽວເມື່ອມັນແກ່).
+                    
+                                                    ເປືອກ:
+                    
+                                                                ເປືອກແມ່ນກ້ຽງ ແລະສີນ້ຳຕານແກມສີຂີ້ເຖົ່າ, ກາຍເປັນໜຽວຫຼາຍຕາມອາຍຸ.
+                                                     
+                                                                    ດອກ:
+                    
+                                                                         ຕົ້ນໝາກມ່ວງມີດອກນ້ອຍ, ມີກິ່ນຫອມ, ສີຂາວ ຫຼືສີເຫຼືອງ.
+                    
+                                                                       ດອກໄມ້ເຫຼົ່ານີ້ເຕີບໃຫຍ່ເປັນກຸ່ມໃຫຍ່ ແລະມັກຈະຖືກປະສົມເກສອນໂດຍແມງໄມ້.
+                      
+                                                                                    ຮາກ:
+                    
+                                                                                 ຕົ້ນໝາກມ່ວງມີຮາກເລິກເພື່ອຮອງຮັບຂະໜາດໃຫຍ່ ແລະ ດູດນ້ຳຈາກບ່ອນເລິກ.
+                    
+                                                                                    🍃ຂະບວນການເຕີບໃຫຍ່ຂອງຕົ້ນໝາກມ່ວງ:
+                                                                                          ຕົ້ນໝາກມ່ວງເລີ່ມອອກໝາກພາຍຫຼັງປະມານ 3 ຫາ 6 ປີ ເມື່ອປູກຈາກຕົ້ນ 5 ຫາ 8 ປີ ຈາກແກ່ນ.
+                    
+                                                                                             ຕົ້ນ​ໄມ້​ສາມາດ​ອອກ​ໝາກ​ໄດ້​ຫຼາຍ​ສິບ​ປີ, ບາງ​ຕົ້ນ​ໃຫ້​ໝາກ​ຫຼາຍ​ກວ່າ 100 ປີ! ມີປະມານ 30 ສາຍພັນ.   </p> 
+
+            </th>
+          </tr>
+          <tr class="appletre5" data-aos="fade-right">
+            <th>
+
+      
+                  <img src="photos/pt.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/pt2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/pt3.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກຮຸ່ງ</h1>
+                   <p class="textvony" > 🌳 ລັກສະນະຕົ້ນໝາກຫຸ່ງ:
+                             ຂະໜາດ:
+                    
+                                   ຕົ້ນໝາກຫຸ່ງມີຂະໜາດນ້ອຍເມື່ອປຽບທຽບກັບຕົ້ນໄມ້ກິນໝາກອື່ນໆ, ມັກຈະເຕີບໃຫຍ່ສູງເຖິງ 10 ຫາ 20 ຟຸດ (3 ຫາ 6 ແມັດ).
+                    
+                                       ພວກມັນມີລຳຕົ້ນດຽວ, ກ້ຽງ, ແລະຊື່, ບໍ່ມີກິ່ງງ່າຈົນເຖິງປາຍ, ບ່ອນທີ່ໃບ ແລະໝາກເຕີບໃຫຍ່.
+                    
+                                        ໃບ:
+                    
+                                                ໃບຂອງຕົ້ນໝາກຫຸ່ງມີຂະໜາດໃຫຍ່, ແສກເລິກ, ແລະມີສີຂຽວທີ່ໂດດເດັ່ນ.
+                    
+                                                       ໃບຈະເລີນເຕີບໂຕຢູ່ເທິງສຸດຂອງລໍາຕົ້ນ, ປະກອບເປັນເຮືອນຍອດຂອງໃບ.
+                    
+                                                    ແຕ່ລະໃບສາມາດກວ້າງເຖິງ 3 ຟຸດ (1 ແມັດ).
+                    
+                                                                  ດອກ:
+                    
+                                                        ຕົ້ນໝາກຫຸ່ງເກີດດອກນ້ອຍ, ສີຂາວຫາສີເຫຼືອງ.
+                          
+                                                            ໝາກ:
+                                      
+                                                              ໝາກຫຸ່ງມີຂະໜາດໃຫຍ່, ຍາວ, ແລະ ມັກຈະເປັນສີສົ້ມເມື່ອສຸກແລ້ວ.
+                                       
+                                                                             ໝາກສາມາດນ້ຳໜັກລະຫວ່າງ 1 ຫາ 20 ປອນ (0.5 ຫາ 9 ກິໂລກຣາມ), ຂຶ້ນກັບແນວພັນ.
+                    
+                                                                           ໝາກມີເນື້ອຫວານ, ມີນ້ຳ, ແລະສີສົ້ມ, ມີແກ່ນສີດຳຢູ່ໃຈກາງ.
+                                        
+                                                                                          ຮາກ:
+                    
+                                                                                            ຕົ້ນໝາກຫຸ່ງມີຮາກຕື້ນທີ່ແຜ່ລາມໄປທົ່ວ, ເຮັດໃຫ້ພວກມັນມີຄວາມອ່ອນໄຫວຕໍ່ກັບລົມ ແລະ ໄພແຫ້ງແລ້ງ.
+                     
+                                                                                     🍃ຂະບວນການເຕີບໃຫຍ່ຂອງຕົ້ນໝາກຫຸ່ງ:
+                                                                                            ຕົ້ນໄມ້ທີ່ແກ່ແລ້ວສາມາດເລີ່ມອອກໝາກໄດ້ພາຍໃນປະມານ 6 ຫາ 12 ເດືອນ ຖ້າປູກດ້ວຍແກ່ນ, ຫຼືໄວກວ່າເມື່ອປູກຈາກຕົ້ນໄມ້ທີ່ຕິດຕາ.
+                    
+                                                                                                   ຕົ້ນໝາກຫຸ່ງໂດຍທົ່ວໄປມີອາຍຸ 3 ຫາ 5 ປີ, ແຕ່ຍັງສາມາດອອກໝາກໄດ້ຕະຫຼອດຊີວິດ ມີປະມານ 20 ສາຍພັນ .   
+                  
+                                                                                        </p>
+
+                                                                                        </th>
+                                                                                        </tr>
+          <tr class="appletre6" data-aos="fade-up-left">
+            <th>
+
+      
+                  <img src="photos/mmt.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/mmt1.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/mmt2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກໂມ</h1>
+                   <p class="textvony" >ໝາກໂມເຕີບໃຫຍ່ຢູ່ເທິງເຄືອ (ບໍ່ແມ່ນຕົ້ນໄມ້).
+
+                        ເຄືອສາມາດແຜ່ໄດ້ 10 ຫາ 15 ຟຸດ (3 ຫາ 4.5 ແມັດ) ຍາວ.
+                    
+                              ໃບມີຂະຫນາດໃຫຍ່ແລະມີສີຂຽວ, ມີຂອບເປັນຫອກ.
+                       
+                                       ມັນຜະລິດດອກສີເຫຼືອງສໍາລັບການປະສົມເກສອນ.
+                    
+                                                ໝາກມີຮູບກົມ, ສີຂຽວຢູ່ດ້ານນອກ, ແລະພາຍໃນສີແດງ ຫຼືສີບົວ.
+                    
+                                                  ມັນໃຊ້ເວລາ 70 ຫາ 90 ມື້ເພື່ອປູກຈາກການປູກຈົນເຖິງການເກັບກ່ຽວ ມີອາຍຸປະມານ 3 ເຖິງ 4 ປີ  ແມ່ນປະມານ 4 ສາຍພັນ.  
+                  </p>
+
+            </th>
+          </tr>
+          <tr class="appletre7"  data-aos="fade-right">
+            <th>
+
+      
+                  <img src="photos/bt.webp" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/bt1.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/bt2.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th>
+                   <h1 class="textvony" >ຕົ້ນໝາກກ້ວຍ</h1>
+                   <p class="textvony" >🍌 ລັກສະນະຕົ້ນກ້ວຍ:
+                                           ຂະໜາດ:
+                    
+                                                ຕົ້ນກ້ວຍສາມາດເຕີບໃຫຍ່ໄດ້ເຖິງ 10-25 ຟຸດ (3 ຫາ 8 ແມັດ), ຂຶ້ນກັບແນວພັນ.
+                    
+                                                          ມັນ​ມີ​ລໍາ​ຕົ້ນ​ທີ່​ບໍ່​ຖືກ​ຕ້ອງ​ທີ່​ເຮັດ​ຈາກ​ຖານ​ໃບ​ຫຸ້ມ​ແຫນ້ນ​, ຊຶ່ງ​ເຮັດ​ໃຫ້​ມັນ​ມີ​ລັກ​ສະ​ນະ​ຂອງ​ລໍາ​ຕົ້ນ​.
+                    
+                                                             ໃບ:
+                    
+                                                                  ໃບມີຂະຫນາດໃຫຍ່, ຍາວ, ແລະສີຂຽວ, ແລະພວກມັນສາມາດເຕີບໂຕໄດ້ເຖິງ 9 ຟຸດ (3 ແມັດ).
+                    
+                                                                      ພວກມັນມີຄວາມຍືດຫຍຸ່ນຫຼາຍແລະມັກຈະມີຮອຍແຕກຢູ່ແຄມເນື່ອງຈາກລົມ.
+                                                   
+                                                                              ດອກ:
+                                     
+                                                                              ສວນກ້ວຍເກີດດອກສີມ່ວງໃຫຍ່ທີ່ຫ້ອຍລົງມາຈາກຕົ້ນຕົ້ນ.
+                    
+                                                                                        ດອກໄມ້ນີ້ໃນທີ່ສຸດກໍ່ຈະປ່ຽນເປັນຫມາກກ້ວຍ.
+                    
+                                                                                      ໝາກ:
+                    
+                                                                                         ໝາກ ຈະເລີນເຕີບໂຕເປັນກຸ່ມແລະເປັນທີ່ຮູ້ຈັກເປັນຊໍ່. ຊໍ່ສາມາດມີໄດ້ຈາກ 10 ຫາ 20 ຫມາກກ້ວຍ.
+                    
+                                                                                              ໝາກກ້ວຍໃນເບື້ອງຕົ້ນມີສີຂຽວ, ແລະພວກມັນສຸກເປັນສີເຫຼືອງ.
+                    
+                                                                                                         ຮາກ:
+                     
+                                                                                                         ພືດກ້ວຍມີຮາກຕື້ນ ແຜ່ກວ້າງແຕ່ບໍ່ເລິກ ເຮັດໃຫ້ຕົ້ນສາມາດດູດຊຶມທາດອາຫານຈາກດິນໄດ້.
+                    
+                                                                                                           ຫຼັງຈາກເກັບກ່ຽວແລ້ວ, ຕົ້ນໄມ້ຕາຍຕາມປົກກະຕິ, ແຕ່ມີໜໍ່ໃໝ່ (ເອີ້ນວ່າຫົວດູດ) ເຕີບໃຫຍ່ຈາກໂຄນເພື່ອເລີ່ມຕົ້ນຮອບວຽນໃໝ່ ມີອາຍຸປະມານ 2 ປີ ຫຼືມາກວ່ານັ້ນ  ມີປະມານ 100 ສາຍພັນ. 
+                  </p>
+
+            </th>
+          </tr>
+          <tr class="appletre4"  data-aos="fade-up-left">   
+            <th>
+
+      
+                  <img src="photos/st1.webp" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/st2.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/st4.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກສະຕໍບູລີ່</h1>
+                   <p class="textvony" >ຂະໜາດ: ສູງປະມານ 8 ຫາ 12 ນິ້ວ (20 ຫາ 30 ຊຕມ).
+
+                                          ໃບ : ສີຂຽວ ມີຂອບເປັນຫອກ.
+                    
+                                                 ດອກ : ດອກສີຂາວປ່ຽນເປັນໝາກພາຍຫຼັງປະສົມເກສອນ.
+                    
+                                                        ໝາກ : ໝາກມີສີແດງ, ຂະໜາດນ້ອຍ ແລະ ມີເມັດນ້ອຍໆຢູ່ດ້ານ.
+                    
+                                                            ຮາກ : ຮາກ, ແຜ່ອອກເພື່ອດູດຊຶມສານອາຫານ  ມີອາຍຸປະມານ 2 ປີ   ມີປະມານ 10 ສາຍພັນ. 
+                                                          
+                                                          
+                                                          </p>
+
+            </th>
+          </tr>
+
+          <tr class="appletre4"  data-aos="fade-right">   
+            <th>
+
+      
+                  <img src="photos/jt1.jpeg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/jt2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/jt3.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກມີ້</h1>
+                   <p class="textvony" >ຂະຫນາດ: ເຕີບໂຕສູງເຖິງ 30 ຫາ 60 ຟຸດ (9 ຫາ 18 ແມັດ) ສູງ.
+
+                                              ໃບ: ໃຫຍ່, ສີຂຽວເຂັ້ມ, ແລະເຫຼື້ອມ.
+                    
+                                                  ດອກ : ມີຂະໜາດນ້ອຍ, ມີສີເຫຼືອງ, ຈະເລີນເຕີບໂຕຢູ່ຕາມລຳຕົ້ນ.
+                    
+                                                          ໝາກ: ໝາກມີຂະໜາດໃຫຍ່, ສີຂຽວ ຫຼື ສີເຫຼືອງ, ສາມາດຮັບນ້ຳໜັກໄດ້ເຖິງ 80 ປອນ (36 ກິໂລກຣາມ).
+                    
+                                                             ຮາກ: ຮາກຮາກເລິກຊ່ວຍຕ້ານລົມ.
+                    
+                                                               ການຈະເລີນເຕີບໂຕ: ເລີ່ມໃຫ້ໝາກພາຍໃນປະມານ 3 ຫາ 4 ປີ ມັນສາມາດຢູ່ໄດ້ຫຼາຍກ່ວາ 50 ປີ.
+
+                                                               ແນວພັນ: ມີປະມານ 5 ຫາ 10 ແນວພັນຕົ້ນຕໍ.   
+                                                                </p>
+
+            </th> 
+          </tr> 
+
+          <tr class="appletre4"  data-aos="fade-up-left">   
+            <th>
+
+      
+                  <img src="photos/ct1.webp" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/ct2.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/ct3.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກພ້າວ</h1>
+                   <p class="textvony" >ະຫນາດ: ສາມາດເຕີບໂຕໄດ້ເຖິງ 60 ຫາ 100 ຟຸດ (18 ຫາ 30 ແມັດ).
+
+                                        ລຳຕົ້ນ: ຮຽວ, ມີສີນ້ຳຕານແກມສີຂີ້ເຖົ່າ, ແລະກ້ຽງມີວົງແຫວນ.
+                    
+                                          ໃບ: ໃຫຍ່, ຄ້າຍຄືຂົນ, ແລະສີຂຽວ, ຍາວເຖິງ 15 ຟຸດ (4.5 ແມັດ).
+                         
+                                            ດອກ : ດອກມີຂະໜາດນ້ອຍ, ສີຂາວ ຫຼື ສີເຫຼືອງ, ເຕີບໃຫຍ່ເປັນຊໍ່.
+                    
+                                               ໝາກ: ໝາກມີສີຂຽວເມື່ອຍັງອ່ອນ, ປ່ຽນເປັນສີນ້ຳຕານດ້ວຍນ້ຳໝາກພ້າວ ແລະ ເນື້ອສີຂາວພາຍໃນ.
+                    
+                                                       ຮາກ : ຮາກເປັນຮ່ອງ ແລະ ກ້ວາງ  ຊະນິດພັນ: ຕົ້ນໝາກພ້າວ 
+
+                                                       ອາຍຸຍືນ: ຕົ້ນຫມາກພ້າວສາມາດມີຊີວິດຢູ່ໄດ້ 60 ຫາ 80 ປີ.
+                                                       
+                                                       ແນວພັນ: ຕົ້ນໝາກພ້າວມີປະມານ 80 ຊະນິດ.  
+                  </p>
+
+            </th> 
+          </tr>
+
+          <tr class="appletre4"   data-aos="fade-right">   
+            <th>
+
+      
+                  <img src="photos/m1.webp" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/m2.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/m3.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກທະນາລິດ pomegranate</h1>
+                   <p class="textvony" >ຂະຫນາດ: ເຕີບໂຕສູງເຖິງ 10 ຫາ 20 ຟຸດ (3 ຫາ 6 ແມັດ) ສູງ.
+
+                                     ລຳຕົ້ນ: ສັ້ນ, ມີສາຂາຫຼາຍ; ເປືອກມີສີນ້ຳຕານແກມສີຂີ້ເຖົ່າ.
+                    
+                                         ໃບ: ຂະຫນາດນ້ອຍ, ແຄບ, ແລະສີຂຽວເຫຼື້ອມ.
+                             
+                                             ດອກ : ສີແດງສົດ ຫຼື ສີສົ້ມ ແລະ ມີຮູບຊົງຄ້າຍຄືແກ.
+                    
+                                                ໝາກ : ໝາກເປັນຮູບກົມ, ສີແດງ ຫຼື ສີເຫຼືອງ, ມີຜິວໜັງແຂງ ແລະ ມີເມັດສີແດງມີນ້ຳມີນ້ຳ.
+                    
+                                                ຮາກ: ເລິກ ແລະ ແຂງແຮງ.
+                    
+                                                    ສາມາດຢູ່ໄດ້ເຖິງ 50 ປີ ຫຼືຫຼາຍກວ່ານັ້ນ. 
+                    
+                                                     ແນວພັນ: ປະມານ 500 ແນວພັນ, ແຕ່ປະມານ 10 ຫາ 20 ຊະນິດຕົ້ນຕໍແມ່ນປູກຢ່າງກວ້າງຂວາງ.</p>
+
+            </th> 
+          </tr>
+          <tr class="appletre4"  data-aos="fade-up-left">   
+            <th>
+
+      
+                  <img src="photos/at1.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/at2.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/at3.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກອາວຄາໂດ  Avocado</h1>
+                   <p class="textvony" >ຂະຫນາດ: ເຕີບໂຕສູງເຖິງ 30 ຫາ 60 ຟຸດ (9 ຫາ 18 ແມັດ) ສູງ.
+
+                                           ລຳຕົ້ນ: ຊື່, ສີນ້ຳຕານອ່ອນ, ມີກິ່ງງ່າຫຼາຍ.
+                    
+                                                 ໃບ: ໃຫຍ່, ສີຂຽວເຂັ້ມ, ແລະຮູບໄຂ່.
+                    
+                                                        ດອກ : ດອກມີຂະໜາດນ້ອຍ, ສີເຫຼືອງອອກຂຽວ, ເຕີບໃຫຍ່ເປັນຊໍ່.
+                      
+                                                          ໝາກ : ໝາກເປັນຮູບໄຂ່ ຫຼື ຮູບໄຂ່ມຸກ, ສີຂຽວຫາສີມ່ວງເຂັ້ມ, ມີເນື້ອອ່ອນ, ມີສີຄີມ ແລະ ມີແກ່ນໃຫຍ່ໜຶ່ງເມັດ.
+                    
+                                                              ຮາກ: ລະບົບຮາກກວ້າງ ແລະຕື້ນ.
+                     
+                                                               🌱 ຂໍ້ມູນເພີ່ມເຕີມ:
+                                                                    ອາຍຸຍືນ: ສາມາດຢູ່ໄດ້ເຖິງ 50 ຫາ 100 ປີ.
+                    
+                                                                      ແນວພັນ: ປະມານ 500 ແນວພັນ.  
+                                                                            </p>
+
+            </th> 
+          </tr>
+          <tr class="appletre4"   data-aos="fade-right">   
+            <th>
+
+      
+                  <img src="photos/ft1.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/ft2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/ft3.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກເດື່ອ  Fig</h1>
+                   <p class="textvony" >ຂະໜາດ: ສູງປະມານ 10 ຫາ 30 ຟຸດ (3 ຫາ 9 ແມັດ).
+
+                              ລຳຕົ້ນ: ເປືອກໜາ ແລະບິດມີສີຂີ້ເຖົ່າ.
+                    
+                                            ໃບ : ໃບມີຂະໜາດໃຫຍ່, ສີຂຽວ, ແລະແສກເລິກ (3 ຫາ 5 ປ່ຽງ).
+                    
+                                                     ດອກ : ມີຂະໜາດນ້ອຍ ແລະ ເຊື່ອງໄວ້ພາຍໃນໝາກ (ເບິ່ງບໍ່ເຫັນ).
+                    
+                                                      ໝາກ : ໝາກອ່ອນ, ກົມ ຫຼື ຮູບໄຂ່, ສີມ່ວງ, ສີຂຽວ, ຫຼື ສີເຫຼືອງ ມີເນື້ອເຍື່ອຫວານຢູ່ພາຍໃນ.
+                    
+                                                              ຮາກ : ແຜ່ກວ້າງ ແລະ ເລິກ.
+                    
+                                                             ດໍາລົງຊີວິດປະມານ 50 ຫາ 75 ປີ.
+                    
+                                                          ແນວພັນ: ປະມານ 700+ ແນວພັນ.   
+                  </p>
+
+            </th> 
+          </tr>
+
+          <tr class="appletre4"  data-aos="fade-up-left">   
+            <th>
+
+      
+                  <img src="photos/gt1.webp" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/gt2.jpeg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/gt3.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກອະງຸ່ນ Grape </h1>
+                   <p class="textvony" >ປະເພດ: ເປັນເຄືອປີນຂຶ້ນ, ບໍ່ແມ່ນຕົ້ນໄມ້.
+
+                                 ຂະຫນາດ: ເຄືອສາມາດເຕີບໂຕໄດ້ເຖິງ 50 ຟຸດ (15 ແມັດ) ຍາວດ້ວຍການສະຫນັບສະຫນູນ.
+                    
+                                       ໃບ: ກວ້າງ, ສີຂຽວ, ແລະແສກແສກມີແຂ້ວເລື່ອຍ.
+                    
+                                             ດອກ : ດອກມີຂະໜາດນ້ອຍ, ສີຂຽວ, ແລະ ເຕີບໃຫຍ່ເປັນຊໍ່.
+                    
+                                                    ໝາກ: ໝາກມີ້ຂະໜາດນ້ອຍ, ກົມ, ສີຂຽວ, ສີແດງ, ສີມ່ວງ, ຫຼື ດຳ ເຕີບໃຫຍ່ເປັນຊໍ່.
+                    
+                                                          ຮາກ: ແຜ່ເລິກ ແລະ ກ້ວາງໃນດິນ.
+                       
+                                                                 ອາຍຸຍືນ: ສາມາດຢູ່ໄດ້ເຖິງ 50 ຫາ 100 ປີ.
+                    
+                                                            ແນວພັນ: ຫຼາຍກວ່າ 8,000 ແນວພັນທົ່ວໂລກ.</p>
+
+            </th> 
+          </tr>
+
+          <tr class="appletre4"   data-aos="fade-right">   
+            <th>
+
+      
+                  <img src="photos/rt1.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/rt2.avif" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/rt3.webp" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກເງາະ Rambutan</h1>
+                   <p class="textvony" >ຂະຫນາດ: ເຕີບໂຕສູງເຖິງ 40 ຫາ 60 ຟຸດ (12 ຫາ 18 ແມັດ) ສູງ.
+
+                        ໃບ: ມີຂະຫນາດໃຫຍ່, ຮູບໄຂ່, ແລະສີຂຽວຊ້ໍາ, ມີຫນ້າດິນກ້ຽງ.
+                    
+                              ດອກມີຂະໜາດນ້ອຍ, ສີຂາວແກມສີຂຽວ ຫຼື ສີເຫຼືອງ.
+                    
+                                 ໝາກ : ກົມ, ສີແດງ ຫຼື ສີເຫຼືອງ, ມີຂົນອ່ອນໆປົກຫຸ້ມ. ພາຍໃນແມ່ນສີຂາວ, ມີນ້ໍາ, ແລະຫວານ.
+                    
+                                   ຮາກ: ເລິກ ແລະ ແຂງແຮງ.
+                    
+                                           ສາມາດຢູ່ໄດ້ເຖິງ 20 ຫາ 25 ປີ.
+                    
+                                                   ແນວພັນ: ປະມານ 30 ຫາ 40 ຊະນິດທີ່. 
+                  
+                  </p>
+
+            </th> 
+          </tr>
+
+          <tr class="appletre4"  data-aos="fade-up-left">   
+            <th>
+
+      
+                  <img src="photos/h1.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/h2.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/h3.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກ mongosteen</h1>
+                   <p class="textvony" >ຂະຫນາດ: ສູງເຖິງ 20 ຫາ 80 ຟຸດ (6 ຫາ 25 ແມັດ) ສູງ.
+
+                                 ໃບ: ໃຫຍ່, ຫນາ, ແລະສີຂຽວເຂັ້ມ, ມີຫນ້າດິນເປັນເງົາ.
+                     
+                                    ດອກມີຂະໜາດໃຫຍ່, ສີແດງ ຫຼື ສີເຫຼືອງຈືດ, ມີຂອບສີຂຽວ.
+                    
+                                           ໝາກ : ໝາກເປັນຮູບກົມ, ສີມ່ວງ ເມື່ອສຸກແລ້ວ, ມີເນື້ອສີຂາວອ່ອນໆ ຫວານຢູ່ພາຍໃນ.
+                    
+                                                   ຮາກ: ແຂງແຮງ ແລະ ຈະເລີນເຕີບໂຕເລິກ.
+                    
+                                                     ສາມາດຢູ່ໄດ້ເຖິງ 100 ປີ ຫຼືຫຼາຍກວ່ານັ້ນ.
+                    
+                                                           ແນວພັນ: ປະມານ 10 ຫາ 15 ແນວພັນ.</p>
+
+            </th> 
+          </tr>
+
+          <tr class="appletre4"  data-aos="fade-right">   
+            <th>
+
+      
+                  <img src="photos/p1.jpg" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/p2.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/p3.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກລຳໄຍ longan</h1>
+                   <p class="textvony" >ຂະຫນາດ: ເຕີບໃຫຍ່ເຖິງ 30 ຫາ 40 ຟຸດ (9 ຫາ 12 ແມັດ) ສູງ.
+
+                               ໃບ: ຍາວ, ສີຂຽວເຂັ້ມ, ແລະເປັນເງົາ, ມີໃບຍ່ອຍຫຼາຍໃບ.
+                    
+                                      ດອກມີຂະໜາດນ້ອຍ, ສີຂາວແກມສີອອກເຫຼືອງ, ຈະເລີນເຕີບໂຕເປັນກຸ່ມ.
+                    
+                                          ໝາກ : ກົມ, ມີສີນ້ຳຕານອ່ອນ, ມີເນື້ອຫວານແປ ແລະ ມີເມັດສີດຳພາຍໃນ.
+                    
+                                               ຮາກ: ເລິກ ແລະ ແຂງແຮງ.
+                    
+                                                     ອາຍຸຍືນ: ສາມາດຢູ່ໄດ້ເຖິງ 40 ຫາ 60 ປີ.
+                    
+                                                        ແນວພັນ: ປະມານ 30 ຫາ 50 ແນວພັນ. 
+                                                       </p>
+
+            </th> 
+          </tr>
+
+          <tr class="appletre4"  data-aos="fade-up-left">   
+            <th>
+
+      
+                  <img src="photos/apt1.avif" alt="apple tree" height="200px " width="200px" class="at">
+                  <img src="photos/apt2.webp" alt="apple tree" height="200px " width="200px" class="aat">
+                  <img src="photos/apt3.jpg" alt="apple tree" height="200px " width="200px" class="aat">
+            </th>
+                 <td class="td">&nbsp;</td>
+            <th> 
+                   <h1 class="textvony" >ຕົ້ນໝາກສົມພູ່ Rose Apple</h1>
+                   <p class="textvony" > ຂະຫນາດ: ເຕີບໂຕສູງເຖິງ 10 ຫາ 40 ຟຸດ (3 ຫາ 12 ແມັດ) ສູງ.
+
+                                     ໃບ: ຍາວ, ແຄບ, ແລະສີຂຽວເຫຼື້ອມ, ມີກິ່ນຫອມ.
+                    
+                                         ດອກ : ມີຂະໜາດໃຫຍ່, ສີຄີມ ຫຼື ສີຂາວ, ມີເກສອນຜູ້ຍາວຫຼາຍ (ມີລັກສະນະເປັນແປງອ່ອນໆ).
+                    
+                                                ໝາກ : ໝາກເປັນຮູບຊົງກົມ ຫຼື ຮູບໄຂ່ມຸກ, ສີຂຽວອ່ອນ, ສີເຫຼືອງ, ຫຼື ສີບົວ, ມີກິ່ນຄ້າຍຄືດອກກຸຫຼາບ ແລະ ເນື້ອໜັງໜຽວ.
+                    
+                                                   ຮາກ : ຮາກເປັນຮ່ອງ ແລະ ກ້ວາງ.
+                    
+                                                       ອາຍຸຍືນ: ສາມາດຢູ່ໄດ້ປະມານ 30 ຫາ 40 ປີ.
+                    
+                                                             ແນວພັນ: ປະມານ 10 ຫາ 20 ແນວພັນ.  
+                  </p>
+
+            </th> 
+          </tr>
+
+        </table>
+      </main>
+
+     </section>
+   
+     <section id="profile"> 
+
+      <h1 style="text-align: center;" class="MMM"  data-aos="fade-up"
+      data-aos-duration="3000"                       >My Profile</h1> 
+      <p style="text-align: center;" class="MMM"  data-aos="fade-up"
+      data-aos-duration="3000"                       >I am make this website.</p>
+      <p style="text-align: center;" class="MMM"  data-aos="fade-up"
+      data-aos-duration="3000"                     >My name is Mr Mone Moua.</p>
+      <p style="text-align: center;" class="MMM"  data-aos="fade-up"
+      data-aos-duration="3000"                    >A student at BCT COLLEGE.</p>
+
+ 
+      <div class="profil" >    
+        <div id="pf">  
+
+        <img src="photos/mone.png" alt="Profile Picture" class="profile-pic">  
+        <p><strong>ຊື່:</strong> <span id="namee" >ນີ້ແມ່ນຊື່ຂອງທ່ານ</span></p>
+        <p><strong>ອີເມວ:</strong> <span id="emaill">ນີ້ແມ່ນອີເມວຂອງທ່ານ.@example.com</span></p>
+        <p><strong>ກ່ຽວກັບ ຂ້ອຍ:</strong> <span id="aboutt">ຂໍຂອບໃຈທີ່ມານຳໃຊ້ເວັບໄຊຂອງພວກເຮົາອີກດ້ວຍ</span></p>
+        
+        <button onclick="editProfile()" class="Edit" data-aos="fade-up">ເພີ່ມຂໍ້ມູນຂອງທ່ານໃສ່</button>
+        <div id="edit-form" style="display:none;">
+          <input type="text" id="edit-name" placeholder="ກະລຸນາປ້ອນຊື່ຂອງທ່ານ">
+          <input type="email" id="edit-email" placeholder="ກະລຸນາປ້ອນອີເມວຂອງທ່ານ">
+          <textarea id="edit-about" placeholder="ຂຽນຂໍ້ຄວາມກ່ຽວກັບທ່ານ"></textarea> 
+
+          <button onclick="saveProfile()" class="sa">ບັນທືກ</button>  
+        </div>
+      </div>
+      </div>
+      
+      <div class="social-links">
+        <span class="linkface" data-aos="fade-up">    
+            <a href="https://facebook.com" target="_blank">Facebook</a>  
+        </span> 
+        <span class="linkyoutube" data-aos="fade-down"> 
+            <a href="https://www.youtube.com" target="_blank">Youtube</a> 
+        </span>
+        <span class="linktiktok" data-aos="fade-right"> 
+          <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+      </span>
+    </div>
+    <button class="edit-btn" onclick="pf()" data-aos="fade-right">ຍົກເລີກ</button>  
+      <div class="prend"   data-aos="zoom-in-up">  
+
+        <p data-aos="fade-up">ຂໍຂອບໃຈທີ່ທ່ານຍັງນຳໃຊ້ເວັບໄຊຂອງພວກເຮົາມາເຖີງໜ້ານີ້</p> 
+        <p data-aos="fade-up">ຫາກວ່າບໍ່ມີໝາກທີ່ທ່ານຕ້ອງການຂໍ້ມູນ ທາງພວກເຮົາ</p>
+        <p data-aos="fade-up">ກໍ ຂໍໂທດນຳເດີ ແຕ່ທ່ານສາມາດ ຕິດຕໍ່ພວກເຮົາໄດ້</p>
+        <p data-aos="fade-up">ດ່ຽວພວກເຮົາ ຊີ ບອກຂໍ້ມູນເພີ່ມເຕີມໃຫ້  </p>
+        <p data-aos="fade-up">ພວກເຮົາ ຍີນດີຕ້ອນຮັບທຸກທ່ານ ສະເໝີ  </p> 
+
+      </div>
+    
+      
+      </div>
+      
+     </section>
+
+
+
+     <footer data-aos="zoom-in-up">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>make 🛠️</h3>  
+          <p>📅 13/4/2025</p>   
+          <p>By MONE 👨‍💻</p>
+        </div>
+    
+        <div class="footer-section">
+          <h3>why 🤷‍♂️</h3>
+          <p>somebody and new child</p>
+          <p>to know all about fruit 👶</p>
+        </div>
+    
+        <div class="footer-section">
+          <h3>all about us 👩👨</h3>  
+          <p><a href="https://www.google.com/maps">🏠 my address</a></p>  
+          <p>💪 Laos</p>
+        </div>
+    
+        <div class="footer-section">
+          <h3>call 📞</h3> 
+          <p>What do you think about us? ⚔️</p>
+          <p>comment here... 💬 ✏️</p>
+        </div>
+      </div>
+    </footer>
+    
+    
+
+
+
+        <!-- here we use script ❌❌❌  -->  
+  
+     <script>
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        showPage('home'); // Set default page to 'home'
+      });
+      
+           function showPage(page) {
+                 const sections = document.querySelectorAll('section');
+                     sections.forEach(section => section.classList.remove('active'));
+   
+                 const activePage = document.getElementById(page);  
+             if (activePage) {
+                   activePage.classList.add('active');
+                }
+                const navItems = document.querySelectorAll('nav li');
+                    navItems.forEach(li => li.classList.remove('active')); 
+       
+               const clickedNav = document.querySelector(`.${page}`);  
+             if (clickedNav) {
+                   clickedNav.classList.add('active');
+                 }
+                 AOS.refresh();  // Refresh AOS after changing the active page   
+             }
+
+
+       function apple(card){     /// ເປັນພາກສ່ວນຂອງຮູບພາບໃນໜ້າabout ທິ່ມັນສາມາດ show ຂໍ້ຄວາມໄດ້
+          card.classList.toggle('active'); 
+
+       }  
+         
+
+   // page about and it is about the photo can change page
+         const cards = document.querySelectorAll('.card');
+
+                    cards.forEach(card => {
+                     card.addEventListener('click', () => {
+                         card.classList.toggle('flipped');
+                                });
+                          });
+        
+
+
+           function logoutnow() {
+              const confirmLogout = confirm("ທ່ານຕ້ອງການອອກຈາກເວັບໄຊແທ້ບໍ? ‼️");   
+                if (confirmLogout) {
+                // Redirect to another page
+                 window.location.href = "Login.html";    
+                }
+              }
+
+
+          // use for profile page 
+
+          function editProfile() {
+            document.getElementById("edit-form").style.display = "block";
+            document.getElementById("edit-name").value = document.getElementById("name").textContent;
+            document.getElementById("edit-email").value = document.getElementById("email").textContent;
+            document.getElementById("edit-about").value = document.getElementById("about").textContent;
+          }
+          
+          function saveProfile() { 
+            document.getElementById("namee").textContent = document.getElementById("edit-name").value;
+            document.getElementById("emaill").textContent = document.getElementById("edit-email").value;
+            document.getElementById("aboutt").textContent = document.getElementById("edit-about").value;
+            document.getElementById("edit-form").style.display = "none";  
+          }
+          
+          function pf() {
+            document.getElementById("edit-name").value = "";
+            document.getElementById("edit-email").value = "";
+            document.getElementById("edit-about").value = "";
+          }
+          
+
+     
+
+     </script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+     <script>
+      AOS.init({    
+      duration: 2000,
+      });
+    </script>
+</body>
+</html> 
